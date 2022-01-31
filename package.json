@@ -1,0 +1,23 @@
+{
+  "name": "ccapdev_mp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yazninja/CCAPDEV_MP.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yazninja/CCAPDEV_MP/issues"
+  },
+  "homepage": "https://github.com/yazninja/CCAPDEV_MP#readme",
+  "dependencies": {
+    "express": "^4.17.2",
+    "express-handlebars": "^6.0.2"
+  }
+}
