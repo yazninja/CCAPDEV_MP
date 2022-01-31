@@ -8,7 +8,7 @@ const port = 3000;
 app.listen(port, function(){
     console.log("Listening on port " + port);
 });
-app.use(express.static(__dirname =  "/public"));
+app.use(express.static(__dirname =  "./public"));
 
 app.set("view engine", "hbs");
 app.engine("hbs", engine({extname: "hbs"}));
