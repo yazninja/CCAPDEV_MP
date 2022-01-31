@@ -1,0 +1,477 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+h1,
+h2 {
+    color: #444;
+    font-size: x-large;
+}
+
+h3 {
+    color: #999;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 15px 10px;
+    border-bottom: 2px solid #999;
+}
+
+table {
+    padding: 10px;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 8px;
+}
+
+.side-menu {
+    position: fixed;
+    background: #04AA6D;
+    width: 18vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+}
+
+.side-menu .money-tracker {
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.side-menu li {
+    font-size: 24px;
+    padding: 10px 40px;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.side-menu li:hover {
+    background: white;
+    color: #04AA6D;
+}
+.side-menu li.active{
+    background: white;
+    color: #04AA6D;
+}
+.side-menu .user{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    height: 100px;
+    bottom:5%;
+    left:5%;
+    width:90%;
+}
+.side-menu .user img {
+  width: 100%;
+  height: 100%;
+}
+.side-menu .user .img-case {
+  position: relative;
+}
+.side-menu .user h1{
+  display: block;
+  width:60%;
+  text-align: center;
+}
+
+.container {
+    position: absolute;
+    right: 0;
+    width: 82vw;
+    height: 100vh;
+    background: #f1f1f1;
+    z-index: 1;
+}
+
+
+.container .header .nav .user {
+    flex: 1;
+    right:0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container .header .nav .user img {
+    width: 40px;
+    height: 40px;
+}
+
+.container .header .nav .user .img-case {
+    position: relative;
+    width: 50px;
+    height: 50px;
+}
+
+.container .header .nav .user .img-case img {
+    position: absolute;
+    top: 0;
+    left: 800;
+    width: 100%;
+    height: 100%;
+}
+
+.container .content {
+    position: relative;
+    margin-top: 10vh;
+    min-height: 90vh;
+    background: #f1f1f1;
+    margin: 2% 0 0 2%;
+}
+
+.container .content .cards {
+    padding: 20px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.container .content .cards .card {
+    width: 250px;
+    height: 150px;
+    background: white;
+    margin: 20px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.container .content .cards .card:hover {
+  background: #efffef;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3), 0 8px 22px 0 rgba(0, 0, 0, 0.29);
+  transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+
+.container .content .content-2 {
+    min-height: 60vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.container .content .content-2 .recent-payments {
+    min-height: 50vh;
+    flex: 5;
+    background: white;
+    margin: 0 25px 25px 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: column;
+}
+
+.container .content .content-2 .savings {
+    flex: 2;
+    background: white;
+    min-height: 50vh;
+    margin: 0 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: column;
+}
+
+.container .content .content-2 .savings table td:nth-child(1) img {
+    height: 40px;
+    width: 40px;
+}
+
+@media screen and (max-width: 1050px) {
+    .side-menu li{
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 940px) {
+    .side-menu li span{
+        display: none;
+    }
+    .side-menu{
+        align-items: center;
+    }
+    .side-menu li img{
+        width: 40px;
+        height: 40px;
+    }
+    .side-menu li:hover {
+        background: #04AA6D;
+        padding: 8px 38px;
+        border: 2px solid white;
+    }
+    
+}
+
+@media screen and (max-width: 536px) {
+    .money-tracker h1{
+        font-size: 16px;
+    }
+    .container .content .cards{
+        justify-content: center;
+    }
+    .side-menu li img {
+        width: 30px;
+        height: 30px;
+    }
+    .container .content .content-2 .recent-payments table th:nth-child(2),
+    .container .content .content-2 .recent-payments table td:nth-child(2) {
+        display: none;
+    }
+}
+
+/* Calendar */
+html {
+    font-size: 62.5%;
+  }
+  
+.container2 {
+    width: 100%;
+    height: 100vh;
+    background-color: #f1f1f1;
+    color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+.calendar {
+    width: 45rem;
+    height: 52rem;
+    background-color: #ccc;
+    box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.4);
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+.month {
+    width: 100%;
+    height: 12rem;
+    background-color: #04AA6D;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    text-align: center;
+    text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+  }
+  
+.month i {
+    font-size: 2.5rem;
+    cursor: pointer;
+  }
+  
+.month h1 {
+    font-size: 3rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    margin-bottom: 1rem;
+  }
+  
+.month p {
+    font-size: 1.6rem;
+  }
+  
+.weekdays {
+    width: 100%;
+    height: 5rem;
+    padding: 0 0.4rem;
+    display: flex;
+    align-items: center;
+  }
+  
+.weekdays div {
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+    width: calc(44.2rem / 7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+  }
+  
+.days {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0.2rem;
+  }
+  
+.days div {
+    font-size: 1.4rem;
+    margin: 0.3rem;
+    width: calc(40.2rem / 7);
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+    transition: background-color 0.2s;
+  }
+  
+.days div:hover:not(.today) {
+    background-color: #04AA6D;
+    border: 0.2rem solid #777;
+    cursor: pointer;
+  }
+  
+.prev-date,
+.next-date {
+    opacity: 0.5;
+  }
+  
+.today {
+    background-color: #04AA6D;
+  }
+
+/* converter */ 
+  .bodyConverter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 0 10px;
+    background: #f1f1f1;
+  }
+  
+  ::selection{
+    color: #fff;
+    background: #675AFE;
+  }
+  
+  .wrapper{
+    width: 370px;
+    padding: 30px;
+    border-radius: 7px;
+    background: #fff;
+    box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.05);
+  }
+  
+  .wrapper header{
+    font-size: 28px;
+    font-weight: 500;
+    text-align: center;
+  }
+  
+  .wrapper form{
+    margin: 40px 0 20px 0;
+  }
+  
+  form :where(input, select, button){
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+  }
+  
+  form p{
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  
+  form input{
+    height: 50px;
+    font-size: 17px;
+    padding: 0 15px;
+    border: 1px solid #999;
+  }
+  
+  form input:focus{
+    padding: 0 14px;
+    border: 2px solid #675AFE;
+  }
+  
+  form .drop-list{
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .drop-list .select-box{
+    display: flex;
+    width: 115px;
+    height: 45px;
+    align-items: center;
+    border-radius: 5px;
+    justify-content: center;
+    border: 1px solid #999;
+  }
+  
+  .select-box img{
+    max-width: 21px;
+  }
+  
+  .select-box select{
+    width: auto;
+    font-size: 16px;
+    background: none;
+    margin: 0 -5px 0 5px;
+  }
+  
+  .select-box select::-webkit-scrollbar{
+    width: 8px;
+  }
+  
+  .select-box select::-webkit-scrollbar-track{
+    background: #fff;
+  }
+  
+  .select-box select::-webkit-scrollbar-thumb{
+    background: #888;
+    border-radius: 8px;
+    border-right: 2px solid #ffffff;
+  }
+  
+  .drop-list .icon{
+    cursor: pointer;
+    margin-top: 30px;
+    font-size: 22px;
+  }
+  
+  form .exchange-rate{
+    font-size: 17px;
+    margin: 20px 0 30px;
+  }
+  
+  form button{
+    height: 52px;
+    color: #fff;
+    font-size: 17px;
+    cursor: pointer;
+    background: #04AA6D;
+    transition: 0.3s ease;
+  }
+  
+  form button:hover{
+    background: #026641;
+  }

@@ -1,0 +1,9 @@
+Username, Password, Monthly Income
+
+Mark_Wolf10, 143recovered, 2500
+Medley342!, Ilovecookies3, 10000
+LucyBright, Whitesky, 1000
+BruceWayneBlk, BatmanandRobin, 5450
+TonyStark, Mark1IronMan, 3000
+Peter-Rabbit, Carrots<3, 7245
+Ashley Simonetta, Rawr12100</3, 9999
