@@ -1,0 +1,62 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PesoTrack || Calendar</title>
+    <link rel="stylesheet" href="resources/css/style2.css" />
+    <!--font awesome cdnjs css for arrows-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+    <!--google font-->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <script src="resources/js/script.js"></script> 
+    <div class="side-menu">
+        <div class="money-tracker">
+            <h1>PesoTrack</h1>
+        </div>
+        <ul>
+            <li class="home"><img src="resources/img/dashboard_white.png" alt="">&nbsp;<span>Dashboard</span> </li>
+            <li class="account"><img src="resources/img/reading-book_white.png" alt="">&nbsp;<span>Account</span> </li>
+            <li class="cal active"><img src="resources/img/teacher2_white.png" alt="">&nbsp;<span>Calendar</span> </li>
+            <li class="add"><img src="resources/img/payment_white.png" alt="">&nbsp;<span>Add Transaction</span> </li>
+            <li class="remove"><img src="resources/img/payment_white.png" alt="">&nbsp;<span>Remove Transaction</span> </li>
+            <li class="settings"><img src="resources/img/settings_white.png" alt="">&nbsp;<span>Settings</span> </li> 
+            <li class="signout"><img src="resources/img/signout_white.png" alt="">&nbsp;<span>Sign Out</span> </li> 
+        </ul>
+        <div class="user">
+            <div class="img-case">
+                <img src="resources/img/user.png" alt="User Image">
+            </div>
+            <h1>Sal</h1>
+        </div>
+    </div>  
+    <div class="container">
+        <div class="calendar">
+            <div class="month"> <i class="fas fa-angle-left prev"></i>
+                <div class="date">
+                    <h1></h1>
+                    <p></p>
+                </div> <i class="fas fa-angle-right next"></i>
+            </div>
+            <div class="weekdays">
+                <div>Sun</div>
+                <div>Mon</div>
+                <div>Tue</div>
+                <div>Wed</div>
+                <div>Thu</div>
+                <div>Fri</div>
+                <div>Sat</div>
+            </div>
+            <div class="days"></div>
+        </div>
+    </div>
+    <script src="resources/js/calendar.js"></script>
+</body>
+
+</html>
