@@ -5,6 +5,7 @@ const res = require("express/lib/response");
 // Mongoose
 const mongoose = require('mongoose');
 const User = require("../database/models/User");
+const Transaction = require("../database/models/Transaction");
 const dbURL = 'mongodb://localhost:27017/pesotrack';
 const options = { useNewUrlParser: true, useUnifiedTopology: true };
 

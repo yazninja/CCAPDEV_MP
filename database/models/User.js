@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const PostSchema = new mongoose.Schema({
+const UserSchema = new mongoose.Schema({
     username: String,
     password: String,
     currMonthlyExpense: Number,
@@ -8,6 +8,6 @@ const PostSchema = new mongoose.Schema({
     transactions: Array,
 })
 
-const User = mongoose.model('User', PostSchema)
+const User = mongoose.model('User', UserSchema)
 
 module.exports = User;
