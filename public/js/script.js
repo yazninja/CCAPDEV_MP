@@ -1,30 +1,30 @@
 $(document).ready(function(){
     $('.cal').click(function(){
-        location.assign("calendar.html");
+        location.assign("/calendar");
         console.log("calendar");
     });
     $('.home').click(function(){
-        location.assign("dashboard.html");
+        location.assign("/dashboard");
         console.log("dashboard");
     });
     $('.add').click(function(){
-        location.assign("add.html");
+        location.assign("/add");
         console.log("add");
     });
     $('.remove').click(function(){
-        location.assign("remove.html");
+        location.assign("/remove");
         console.log("remove");
     });
     $('.signout').click(function(){
-        location.assign("index.html");
+        location.assign("/index");
         console.log("signout");
     });
     $('.register').click(function(){
-        location.assign("reg_page.html");
+        location.assign("/reg-page");
         console.log("register");
     });
     $('.conv').click(function(){
-        location.assign("converter.html");
+        location.assign("/converter");
         console.log("conv");
     });
     $('.side-menu li').mouseenter(function(){

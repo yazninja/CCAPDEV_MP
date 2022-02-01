@@ -41,6 +41,10 @@ app.post("/register", function(req, res){
     //     res.redirect("/dashboard");
     // });
 });
+app.get("/dashboard", function(req, res){
+    console.log("#Dashboard");
+    res.render("dashboard", {title: 'Dashboard', layout: 'app'});
+});
 
 const port = 3000;
 app.listen(port, function(){
