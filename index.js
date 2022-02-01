@@ -4,14 +4,13 @@ const { engine } = require("express-handlebars");
 const res = require("express/lib/response");
 // Mongoose
 const mongoose = require('mongoose');
-const User = require("../database/models/User");
-const Transaction = require("../database/models/Transaction");
 const dbURL = 'mongodb://localhost:27017/pesotrack';
 const options = { useNewUrlParser: true, useUnifiedTopology: true };
-
 mongoose.connect(dbURL, options, function(){
     console.log("Connected to DB @ " + dbURL);
 });
+const User = require("./database/models/User");
+const Transaction = require("./database/models/Transaction");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -32,6 +31,12 @@ app.post("/register", function(req, res){
         res.redirect("/dashboard");
     });
 });
+
+app.post('/submit-post', function (req, res) {
+    Post.create(req.body, (error, post) => {
+        res.redirect('/')
+    })
+})
 
 const port = 3000;
 app.listen(port, function(){
