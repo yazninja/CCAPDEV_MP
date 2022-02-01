@@ -2,6 +2,15 @@ const express = require("express");
 const { engine } = require("express-handlebars");
 const res = require("express/lib/response");
 
+const mongoose = reuire('mongoose');
+
+const dbURL = 'mongodb://localhost:27017/pesotrack';
+const options = { useNewUrlParser: true, useUnifiedTopology: true };
+
+mongoose.connect(dbURL, options, function(){
+    console.log("Connected to DB");
+});
+
 const app = express();
 
 const port = 3000;
