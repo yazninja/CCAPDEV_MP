@@ -22,12 +22,17 @@ app.set("view engine", "hbs");
 app.engine("hbs", engine({extname: "hbs"}));
 
 app.get("/", function(req, res){
+    console.log("#Home Page");
     res.render("index", {title: 'PesoTrack'});
 });
 app.get("/reg-page", function(req, res){
-    console.log("register");
+    console.log("#Register");
     res.render("register", {title: 'Register'});
 });
+app.get("/add", function(req, res){
+    console.log("#Add");
+    res.render("add", {title: 'Add Transaction', layout: 'app'});
+    });
 
 app.post("/register", function(req, res){
     console.log(req.body);
