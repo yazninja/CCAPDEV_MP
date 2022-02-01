@@ -24,19 +24,18 @@ app.engine("hbs", engine({extname: "hbs"}));
 app.get("/", function(req, res){
     res.render("index");
 });
+app.get("/reg-page", function(req, res){
+    console.log("register");
+    res.render("register");
+});
 
 app.post("/register", function(req, res){
     console.log(req.body);
-    User.create(req.body, (error, post) => {
-        res.redirect("/dashboard");
-    });
+    res.redirect("/dashboard");
+    // User.create(req.body, (error, post) => {
+    //     res.redirect("/dashboard");
+    // });
 });
-
-app.post('/submit-post', function (req, res) {
-    Post.create(req.body, (error, post) => {
-        res.redirect('/')
-    })
-})
 
 const port = 3000;
 app.listen(port, function(){
