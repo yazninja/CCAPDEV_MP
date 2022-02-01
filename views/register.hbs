@@ -1,32 +1,114 @@
+<head>
+    <script>
 
-    <form action="/register" method="post">
-    <div class="reglogin_container">
-        <center><label><h2>Register</h2></label></center>
-        <span>Username:<br /></span>
-        <input name="username" type="text" placeholder="Input your username" size="25" />
+        function checkForm() {
+            var valid = false;
 
-        <br />
+            var u_name = document.getElementById('username');
+            var p_word1 = document.getElementById('password1');
+            var p_word2 = document.getElementById('password2');
+
+            if (u_name.value == "" || p_word1.value == "" || p_word2.value == "") {
+
+                if (u_name.value == "") {
+                    f_name.style.backgroundColor = "red";
+                    valid;
+                }
+
+                if (p_word1.value == "") {
+                    p_word1.style.backgroundColor = "red";
+                    valid;
+                }
+
+                if (p_word2.value == "") {
+                    p_word2.style.backgroundColor = "red";
+                    valid;
+                }
+
+            }
+
+            if (u_name.value || p_word1.value || p_word2.value) {
+
+                if (u_name.value) {
+                    u_name.style.backgroundColor = "white";
+                    valid;
+                }
+
+                if (p_word1.value) {
+                    p_word1.style.backgroundColor = "white";
+                    valid;
+                }
+
+                if (p_word2.value) {
+                    p_word2.style.backgroundColor = "white";
+                    valid;
+                }
 
 
-        <span>Password:<br /></span>
-        <input name="pwd" type="password" placeholder="Input your password" size="25" />
+            }
 
 
-        <br />
+            if (u_name.value && p_word1.value) {
 
-        <span>Confirm Password:<br /></span>
-        <input name="confirmPwd" type="password" placeholder="Confirm your password" size="25" />
+                if (p_word1.value) {
 
-        <br />
 
-        <span>Monthly Income:<br /></span>
-        <input name= "mIncome" type="text" placeholder="What is your monthly income? (optional)" size="25" />
+                    //if the password is matched with the confirmed password
+                    if (p_word1.value == p_word2.value) {
 
-        <br />
+                        p_word1.style.backgroundColor = "white";
+                        p_word2.style.backgroundColor = "white";
+                       
+                        valid = true;
+                    }
 
-        <input type="submit" value="Register" />
+                    //if the password is not matched with the confirmed password
+                    else {
+                        p_word1.style.backgroundColor = "red";
+                        p_word2.style.backgroundColor = "red";
+                        valid;
 
-        <br />
+                    }
 
-    </div>
-</form>
+                }
+
+
+            }
+            return valid;
+        }
+    </script>
+</head>
+
+<body>
+    <form action="/register" method="post" onSubmit="checkForm()">
+        <div class="reglogin_container">
+            <center><label><h2>Register</h2></label></center>
+            <span>Username:<br /></span>
+            <input id="username" name="username" type="text" placeholder="Input your username" size="25" />
+
+            <br />
+
+
+            <span>Password:<br /></span>
+            <input id="password1" name="pwd" type="password" placeholder="Input your password" size="25" />
+
+
+            <br />
+
+            <span>Confirm Password:<br /></span>
+            <input id="password2" name="confirmPwd" type="password" placeholder="Confirm your password" size="25" />
+
+            <br />
+
+            <span>Monthly Income:<br /></span>
+            <input name="mIncome" type="text" placeholder="What is your monthly income? (optional)" size="25" />
+
+            <br />
+
+            <input type="submit" value="Register" />
+
+            <br />
+
+        </div>
+    </form>
+</body>
