@@ -33,6 +33,12 @@ app.post("/register", function(req, res){
     });
 });
 
+app.post('/submit-post', function (req, res) {
+    Post.create(req.body, (error, post) => {
+        res.redirect('/')
+    })
+})
+
 const port = 3000;
 app.listen(port, function(){
     console.log("Listening on port " + port);
