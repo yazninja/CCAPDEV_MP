@@ -25,8 +25,8 @@ app.get("/", function(req, res){
     res.render("index", {title: 'PesoTrack'});
 });
 app.get("/reg-page", function(req, res){
-    console.log("register", {title: 'Register'});
-    res.render("register");
+    console.log("register");
+    res.render("register", {title: 'Register'});
 });
 
 app.post("/register", function(req, res){
