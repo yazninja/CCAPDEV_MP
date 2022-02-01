@@ -1,0 +1,126 @@
+<add-form>
+    <div class="container">
+        <div class="form_container">
+            <div class="tab">
+                <button class="inc activetab">Add Income</button>
+                <button class="exp">Add Expense</button>
+            </div>
+            <form action="/add-transaction" method="post">
+                <div class="title">
+                    <input type="text" name="title" placeholder="Title" maxlength="20" required>
+                </div>
+                <!-- Income Tab -->
+                <div class="add_income">
+                    <div class="form_group">
+                        <select name="iPresets" class="iPresets">
+                            <option value="mSalary">Add Monthly Salary</option>
+                            <option value="aSalary">Add Annual Salary</option>
+                            <option value="dSalary">One-time Income</option>
+                            <option value="custom">Custom</option>
+                        </select>
+                        <label for="iPresets" class="control_label">Presets</label>
+                        <i class="bar"></i>
+                    </div>
+                    <div class="form_group">
+                        <input type="text" name="iAmount" class="amount" required>
+                        <label for="iAmount" class="control_label">Amount</label>
+                        <i class="bar"></i>
+                    </div>
+                    <div class="form_group">
+                        <select name="repeat" name="repeat" class="repeat">
+                            <option value="0">Never</option>
+                            <option value="1">Daily</option>
+                            <option value="2">Weekly</option>
+                            <option value="3" selected>Monthly</option>
+                            <option value="4">Yearly</option>
+                        </select>
+                        <label for="repeat" class="control_label">Repeat</label>
+                        <i class="bar"></i>
+                    </div>
+                    <div class="form_group">
+                        <input type="date" name="sDate" class="date" required>
+                        <label for="sDate" class="control_label">Start Date</label>
+                        <i class="bar"></i>
+                    </div>
+                    <div class="form_group">
+                        <input type="date" name="eDate" class="date" required>
+                        <label for="eDate" class="control_label">End Date</label>
+                        <i class="bar"></i>
+                    </div>
+                    <div class="form_group">
+                        <input type="textarea" name="iDesc" class="desc">
+                        <label for="iDesc" class="control_label">Description</label>
+                        <i class="bar"></i>
+                    </div>
+                    <div class="button-container">
+                        <button type="submit" class="submit"><span>Add Income Data</span></button>
+                    </div>
+                </div>
+                <!-- End of Income Tab -->
+                <!-- Expense Tab -->
+                <div class="add_expense">
+                    <div class="form_group">
+                        <select name="ePresets" class="ePresets">
+                            <option value="mExpense">Add Monthly Expense</option>
+                            <option value="aExpense">Add Annual Expense</option>
+                            <option value="dExpense">One-time Expense</option>
+                            <option value="custom">Custom</option>
+                        </select>
+                        <label for="ePresets" class="control_label">Presets:</label>
+                        <i class="bar"></i>
+                    </div>
+                    <div class="form_group">
+                        <input type="text" name="eAmount" class="amount" required>
+                        <label for="eAmount" class="control_label">Amount</label>
+                        <i class="bar"></i>
+                    </div>
+                    <div class="form_group">
+                        <select name="repeat" name="repeat" class="repeat">
+                            <option value="0">Never</option>
+                            <option value="1">Daily</option>
+                            <option value="2">Weekly</option>
+                            <option value="3" selected>Monthly</option>
+                            <option value="4">Yearly</option>
+                        </select>
+                        <label for="repeat" class="control_label">Repeat</label>
+                        <i class="bar"></i>
+                    </div>
+                    <div class="form_group">
+                        <select name="catergory" class="catergory">
+                            <option value="0">Food</option>
+                            <option value="1">Transportation</option>
+                            <option value="2">Entertainment</option>
+                            <option value="3">Health</option>
+                            <option value="4">Other</option>
+                        </select>
+                        <label for="catergory" class="control_label">Catergory:</label>
+                        <i class="bar"></i>
+                    </div>
+                    <div class="form_group">
+                        <input type="text" name="custom_category" class="custom_category">
+                        <label for="custom_category" class="control_label">Custom Category:</label>
+                        <i class="bar"></i>
+                    </div>  
+                    <div class="form_group">
+                        <input type="date" name="sDate" class="date" required>
+                        <label for="sDate" class="control_label">Start Date</label>
+                        <i class="bar"></i>
+                    </div>
+                    <div class="form_group">
+                        <input type="date" name="eDate" class="date" required>
+                        <label for="eDate" class="control_label">End Date</label>
+                        <i class="bar"></i>
+                    </div>
+                    <div class="button-container">
+                        <button type="submit" class="submit"><span>Add Expense Data</span></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        $(function () {
+            $('.amount').maskMoney({ prefix: 'PHP ' });
+        })
+    </script>
+</add-form>
