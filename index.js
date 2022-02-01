@@ -22,16 +22,16 @@ app.set("view engine", "hbs");
 app.engine("hbs", engine({extname: "hbs"}));
 
 app.get("/", function(req, res){
-    res.render("index");
+    res.render("index", {title: 'PesoTrack'});
 });
 app.get("/reg-page", function(req, res){
-    console.log("register");
+    console.log("register", {title: 'Register'});
     res.render("register");
 });
 
 app.post("/register", function(req, res){
     console.log(req.body);
-    res.redirect("/dashboard");
+    res.redirect("/dashboard", {title: 'Dashboard'});
     // User.create(req.body, (error, post) => {
     //     res.redirect("/dashboard");
     // });
