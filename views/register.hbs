@@ -58,7 +58,7 @@
 
                         p_word1.style.backgroundColor = "white";
                         p_word2.style.backgroundColor = "white";
-                       
+
                         valid = true;
                     }
 
@@ -82,23 +82,24 @@
 <script src="../js/validate.js"></script>
 
 <body>
+
     <form action="/register" method="post">
         <div class="reglogin_container">
             <center><label><h2>Register</h2></label></center>
             <span>Username:<br /></span>
-            <input id="username" name="username" type="text" placeholder="Input your username" size="25" />
+            <input id="username" class="field" name="username" type="text" placeholder="Input your username" size="25" required />
 
             <br />
 
 
             <span>Password:<br /></span>
-            <input id="password1" name="pwd" type="password" placeholder="Input your password" size="25" />
+            <input id="password1" class="field" name="pwd" type="password" placeholder="Input your password" size="25" required />
 
 
             <br />
 
             <span>Confirm Password:<br /></span>
-            <input id="password2" name="confirmPwd" type="password" placeholder="Confirm your password" size="25" />
+            <input id="password2" class="field" name="confirmPwd" type="password" placeholder="Confirm your password" size="25" required />
 
             <br />
 

@@ -11,47 +11,69 @@ $(document).ready(function () {
     function validateU_name() {
         let usernameval = $("#username").val();
         if (usernameval == '') {
-            $("#username").css({ "background-color": "red" });
+            $("#username").css({ "background-color": "#ff9999" });
             return uname_valid;
         }
         else {
+            $("#username").css({ "background-color": "#80ff80" });
             return uname_valid=true;
         }
+        return uname_valid;
     }
 
     function validatepassword1() {
         let pwd1 = $("#password1").val();
         if (pwd1 == '') {
-            $("#password1").css({ "background-color": "red" });
+            $("#password1").css({ "background-color": "#ff9999" });
             return pwd1_valid;
         }
         else {
+            $("#password1").css({ "background-color": "#80ff80" });
             return pwd1_valid = true;
         }
+        return pwd1_valid;
     }
 
     function validatepassword2() {
         let pwd2 = $("#password2").val();
+
         if (pwd2 == '') {
-            $("#password2").css({ "background-color": "red" });
+            $("#password2").css({ "background-color": "#ff9999" });
             return pwd2_valid;
         }
         else {
+            $("#password2").css({ "background-color": "#80ff80" });
             return pwd2_valid = true;
         }
+        return pwd2_valid;
+       /* if (pwd2=='') {
+            $(".field").change(function () {
+                $(".field").css({ "background-color": "#ff4d4d" });
+                return pwd2_valid;
+            });
+            
+        }
+        else {
+            $(".field").change(function () {
+                $(".field").css({ "background-color": "#99e699" });
+                return pwd2_valid = true;
+            });
+           
+        }*/
     }
 
     function ismatchpassword() {
         let pwd1 = $("#password1").val();
         let pwd2 = $("#password2").val();
         if (pwd1 != pwd2) {
-            $("#password1").css({ "background-color": "red" });
-            $("#password2").css({ "background-color": "red" });
+            $("#password1").css({ "background-color": "#ff9999" });
+            $("#password2").css({ "background-color": "#ff9999" });
             return ismatchpwd;
         }
         else {
             return ismatchpwd = true;
         }
+        return ismatchpwd;
     }
 
 
