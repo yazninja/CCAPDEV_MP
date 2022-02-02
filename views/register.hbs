@@ -1,115 +1,47 @@
-<!--<head>
-    <script>
-        function checkForm() {
-            var valid = false;
-
-            var u_name = document.getElementById('username');
-            var p_word1 = document.getElementById('password1');
-            var p_word2 = document.getElementById('password2');
-
-            if (u_name.value == "" || p_word1.value == "" || p_word2.value == "") {
-
-                if (u_name.value == "") {
-                    f_name.style.backgroundColor = "red";
-                    valid;
-                }
-
-                if (p_word1.value == "") {
-                    p_word1.style.backgroundColor = "red";
-                    valid;
-                }
-
-                if (p_word2.value == "") {
-                    p_word2.style.backgroundColor = "red";
-                    valid;
-                }
-
-            }
-
-            if (u_name.value || p_word1.value || p_word2.value) {
-
-                if (u_name.value) {
-                    u_name.style.backgroundColor = "white";
-                    valid;
-                }
-
-                if (p_word1.value) {
-                    p_word1.style.backgroundColor = "white";
-                    valid;
-                }
-
-                if (p_word2.value) {
-                    p_word2.style.backgroundColor = "white";
-                    valid;
-                }
-
-
-            }
-
-            if (u_name.value && p_word1.value) {
-
-                if (p_word1.value) {
-
-
-                    //if the password is matched with the confirmed password
-                    if (p_word1.value == p_word2.value) {
-
-                        p_word1.style.backgroundColor = "white";
-                        p_word2.style.backgroundColor = "white";
-
-                        valid = true;
-                    }
-
-                    //if the password is not matched with the confirmed password
-                    else {
-                        p_word1.style.backgroundColor = "red";
-                        p_word2.style.backgroundColor = "red";
-                        valid;
-
-                    }
-
-                }
-
-
-            }
-            return valid;
-        }
-    </script>
-</head>-->
-
+<script src="../js/script.js"></script>
 <script src="../js/validate.js"></script>
-
-<body>
-
-    <form action="/register" method="post">
-        <div class="reglogin_container">
-            <center><label><h2>Register</h2></label></center>
-            <span>Username:<br /></span>
-            <input id="username" class="field" name="username" type="text" placeholder="Input your username" size="25" required />
-
-            <br />
-
-
-            <span>Password:<br /></span>
-            <input id="password1" class="field" name="pwd" type="password" placeholder="Input your password" size="25" required />
-
-
-            <br />
-
-            <span>Confirm Password:<br /></span>
-            <input id="password2" class="field" name="confirmPwd" type="password" placeholder="Confirm your password" size="25" required />
-
-            <br />
-
-            <span>Monthly Income:<br /></span>
-            <input name="mIncome" type="text" placeholder="What is your monthly income? (optional)" size="25" />
-
-            <br />
-
-            <input id="reg_btn" type="submit" value="Register" />
-
-            <br>
-
-        </div>
-    </form>
-</body>
+{{#if msg}}
+<script>
+    alert("{{msg}}");
+</script>
+{{/if}}
+<div>
+    <div class="form_container">
+        <form action="/register" method="post">
+            <h1>CREATE YOUR PESOTRACK ACCOUNT</h1>
+            <div class="form_group">
+                <input type="text" name="username" required>
+                <label for="username" class="control_label">Username</label>
+                <i class="bar"></i>
+            </div>
+            <div class="form_group">
+                <input type="text" name="firstName" required>
+                <label for="firstName" class="control_label">First Name</label>
+                <i class="bar"></i>
+            </div>
+            <div class="form_group">
+                <input type="text" name="lastName" required>
+                <label for="lastName" class="control_label">Last Name</label>
+                <i class="bar"></i>
+            </div>
+            <div class="form_group">
+                <input type="password" name="password" class="pass" required>
+                <label for="password" class="control_label">Password</label>
+                <i class="bar"></i>
+            </div>
+            <div class="form_group pass2">
+                <input type="text" name="pass2" class="pass2" required>
+                <label for="pass2" class="control_label">Confirm Password</label>
+                <i class="bar"></i>
+            </div>
+            <div class="form_group">
+                <input type="number" name="currMonthlyIncome">
+                <label for="currMonthlyIncome" class="control_label">Monthly Income (optional)</label>
+                <i class="bar"></i>
+            </div>
+            <div class="button-container">
+                <button type="submit" class="submit"><span>Login</span></button>
+            </div>
+        </form>
+    </div>
+</div>

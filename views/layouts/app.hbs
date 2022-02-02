@@ -8,6 +8,7 @@
         <script src="../js/jquery.maskMoney.min.js"></script>
     </head>
     <body>
+        <script src="../js/script.js"></script>
         <div class="side-menu">
             <div class="logo">
                 <img src="../img/expensetracker.png" alt="Expense Tracker Logo">
@@ -27,8 +28,8 @@
                     <img src="../img/user.png" alt="User Image">
                 </div>
                 <div class="user-text">
-                    <h1>Sample User this will overflow</h1>
-                    <h2>@{{username}}</h2>
+                    <h1>{{user.firstName}} {{user.lastName}}</h1>
+                    <h2>@{{user.username}}</h2>
                 </div>
             </div>
         </div> 

@@ -506,3 +506,6 @@ html {
   form button:hover{
     background: #026641;
   }
+  .form_container h1{
+    text-align: center;
+  }

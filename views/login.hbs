@@ -1,21 +1,23 @@
-<script src="../js/script.js"></script> 
+<script src="../js/script.js"></script>
 
 <div>
     <div class="form_container">
+
         <form action="/login" method="post">
-     <div class="form_group">
-        <input type="textarea" name="username" class="desc">
-        <label for="iDesc" class="control_label">Username</label>
-        <i class="bar"></i>
-    </div>
-    <div class="form_group">
-        <input type="textarea" name="pass" class="desc">
-        <label for="iDesc" class="control_label">Password</label>
-        <i class="bar"></i>
-    </div>
-    <div class="button-container">
-        <button type="submit" class="submit"><span>Login</span></button>
-    </div>
-    </form>
+            <h1>LOGIN TO PESOTRACK</h1>
+            <div class="form_group">
+                <input type="text" name="username" required>
+                <label for="username" class="control_label">Username</label>
+                <i class="bar"></i>
+            </div>
+            <div class="form_group">
+                <input type="password" name="pass" required>
+                <label for="pass" class="control_label">Password</label>
+                <i class="bar"></i>
+            </div>
+            <div class="button-container">
+                <button type="submit" class="submit"><span>Login</span></button>
+            </div>
+        </form>
     </div>
 </div>
