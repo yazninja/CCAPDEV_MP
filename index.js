@@ -11,6 +11,7 @@ mongoose.connect(dbURL, options, function(){
 });
 const User = require("./database/models/User");
 const Transaction = require("./database/models/Transaction");
+var user;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -31,7 +32,7 @@ app.get("/reg-page", function(req, res){
 });
 app.get("/add", function(req, res){
     console.log("#Add");
-    res.render("add", {title: 'Add Transaction', layout: 'app'});
+    res.render("add", {title: 'Add Transaction', layout: 'app', add: true});
     });
 
 app.post("/register", function(req, res){
@@ -41,9 +42,19 @@ app.post("/register", function(req, res){
     //     res.redirect("/dashboard");
     // });
 });
+app.get("/login-page", function(req, res){
+    console.log("#Login");
+    res.render("login", {title: 'Login', style2: true});
+});
+app.post("/login",function(req, res){
+    console.log(req.body);
+    user = req.body;
+
+    res.redirect("/dashboard");
+});
 app.get("/dashboard", function(req, res){
     console.log("#Dashboard");
-    res.render("dashboard", {title: 'Dashboard', layout: 'app'});
+    res.render("dashboard", {title: 'Dashboard', layout: 'app', home: true, username: user.username});
 });
 
 const port = 3000;

@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    console.log('url' + location);
     $('.cal').click(function(){
         location.assign("/calendar");
         console.log("calendar");
@@ -16,7 +17,7 @@ $(document).ready(function(){
         console.log("remove");
     });
     $('.signout').click(function(){
-        location.assign("/index");
+        location.assign("/");
         console.log("signout");
     });
     $('.register').click(function(){
@@ -35,5 +36,5 @@ $(document).ready(function(){
         $('.side-menu li.active').find('img')[0].src = $('.side-menu li.active').find('img')[0].src.replace(/white/, 'green');
     });
     $('.side-menu li.active').find('img')[0].src = $('.side-menu li.active').find('img')[0].src.replace(/white/, 'green');
-
+``
 });

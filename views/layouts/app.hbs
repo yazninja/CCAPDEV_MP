@@ -8,6 +8,30 @@
         <script src="../js/jquery.maskMoney.min.js"></script>
     </head>
     <body>
+        <div class="side-menu">
+            <div class="logo">
+                <img src="../img/expensetracker.png" alt="Expense Tracker Logo">
+                <h1>PesoTrack</h1>
+            </div>
+            <ul>
+                <li class="home {{#if home}}active{{/if}}"><img src="../img/dashboard_white.png" alt="">&nbsp;<span>Dashboard</span> </li>
+                <li class="account {{#if account}}active{{/if}}"><img src="../img/reading-book_white.png" alt="">&nbsp;<span>Account</span> </li>
+                <li class="cal {{#if cal}}active{{/if}}"><img src="../img/teacher2_white.png" alt="">&nbsp;<span>Calendar</span> </li>
+                <li class="add {{#if add}}active{{/if}}"><img src="../img/payment_white.png" alt="">&nbsp;<span>Add Transaction</span> </li>
+                <li class="remove {{#if remove}}active{{/if}}"><img src="../img/payment_white.png" alt="">&nbsp;<span>Remove Transaction</span> </li>
+                <li class="settings {{#if setting}}active{{/if}}"><img src="../img/settings_white.png" alt="">&nbsp;<span>Settings</span> </li> 
+                <li class="signout"><img src="../img/signout_white.png" alt="">&nbsp;<span>Sign Out</span> </li> 
+            </ul>
+            <div class="user">
+                <div class="img-case">
+                    <img src="../img/user.png" alt="User Image">
+                </div>
+                <div class="user-text">
+                    <h1>Sample User this will overflow</h1>
+                    <h2>@{{username}}</h2>
+                </div>
+            </div>
+        </div> 
         {{{ body }}}
     </body>
 

@@ -1,6 +1,4 @@
-<head>
     <script>
-
         function checkForm() {
             var valid = false;
 
@@ -47,7 +45,6 @@
 
             }
 
-
             if (u_name.value && p_word1.value) {
 
                 if (p_word1.value) {
@@ -77,37 +74,30 @@
             return valid;
         }
     </script>
-</head>
-
-<body>
     <form action="/register" method="post" onSubmit="checkForm()">
         <div class="reglogin_container">
             <center><label><h2>Register</h2></label></center>
             <span>Username:<br /></span>
-            <input id="username" name="username" type="text" placeholder="Input your username" size="25" />
-
-            <br />
-
-
+            <input id="username" name="username" type="text" placeholder="Input your username" size="25" required/>
+            <br>
+            <span>First Name:<br /></span>
+            <input id="username" name="username" type="text" placeholder="Input your First name" size="25" required/>
+            <br>
+            <span>Last Name:<br /></span>
+            <input id="username" name="username" type="text" placeholder="Input your Last Name" size="25" required/>
+            <br>
             <span>Password:<br /></span>
-            <input id="password1" name="pwd" type="password" placeholder="Input your password" size="25" />
-
-
-            <br />
-
+            <input id="password1" name="pwd" type="password" placeholder="Input your password" size="25" required/>
+            <br>
             <span>Confirm Password:<br /></span>
-            <input id="password2" name="confirmPwd" type="password" placeholder="Confirm your password" size="25" />
-
-            <br />
-
+            <input id="password2" name="confirmPwd" type="password" placeholder="Confirm your password" size="25" required/>
+            <br>
             <span>Monthly Income:<br /></span>
-            <input name="mIncome" type="text" placeholder="What is your monthly income? (optional)" size="25" />
-
-            <br />
-
+            <input name="mIncome" type="text" placeholder="What is your monthly income? (optional)" size="25" required/>
+            <br>
             <input type="submit" value="Register" />
 
-            <br />
+            <br>
 
         </div>
     </form>
