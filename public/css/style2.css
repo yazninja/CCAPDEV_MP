@@ -179,7 +179,7 @@ td {
 .container .content .cards {
     padding: 20px 15px;
     display: flex;
-    align-items: center;
+    align-items: top;
     justify-content: space-between;
     flex-wrap: wrap;
 }
@@ -400,6 +400,8 @@ html {
   }
   
   .wrapper{
+    position: relative;
+    right:5%;
     width: 370px;
     padding: 30px;
     border-radius: 7px;
@@ -508,4 +510,11 @@ html {
   }
   .form_container h1{
     text-align: center;
+  }
+  .center-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100%;
+    width:100%;
   }
