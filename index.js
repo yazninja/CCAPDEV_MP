@@ -24,19 +24,24 @@ app.use(express.static(__dirname =  "./public"));
 app.set("view engine", "hbs");
 app.engine("hbs", engine({extname: "hbs", handlebars: allowInsecurePrototypeAccess(Handlebars)}));
 
+const port = 3000;
+app.listen(port, function(){
+    console.log("Listening on port " + port);
+});
+// Pages using start layout
 app.get("/", function(req, res){
     console.log("#Home Page");
-    res.render("index", {title: 'PesoTrack'});
+    res.render("index", {title: 'PesoTrack', layout: 'start'});
 });
 app.get("/reg-page", function(req, res){
     console.log("#Register");
-    res.render("register", {title: 'Register', style2: true});
+    res.render("register", {title: 'Register', style2: true,  layout: 'start'});
 });
-app.get("/add", function(req, res){
-    console.log("#Add");
-    res.render("add", {title: 'Add Transaction', layout: 'app', add: true});
-    });
-
+app.get("/login-page", function(req, res){
+    console.log("#Login");
+    res.render("login", {title: 'Login', style2: true, layout: 'start'});
+});
+// Post processes
 app.post("/register", function(req, res){
     delete req.body.pass2;
     console.log(req.body);
@@ -50,13 +55,9 @@ app.post("/register", function(req, res){
             });
         }
         else{
-            res.render("register", {title: 'Register', style2: true, msg: "Username already exists"});
+            res.render("register", {title: 'Register', layout: 'start', style2: true, msg: "Username already exists"});
         }
       });
-});
-app.get("/login-page", function(req, res){
-    console.log("#Login");
-    res.render("login", {title: 'Login', style2: true});
 });
 app.post("/login",function(req, res){
 
@@ -64,7 +65,7 @@ app.post("/login",function(req, res){
         var count = results.length;
         console.log("Count: " + count);
         if(count == 0){
-            res.render("login", {title: 'Login', style2: true, msg: "Username/Password is incorrect"});
+            res.render("login", {title: 'Login', layout: 'start', style2: true, msg: "Username/Password is incorrect"});
         }
         else{
             user = results[0];
@@ -72,15 +73,16 @@ app.post("/login",function(req, res){
         }
     });
 });
-app.get("/calendar", function(req, res){
-    console.log("#Calendar");
-    res.render("calendar-page", {title: 'Calendar', layout: 'app'});
-});
+// Pages using main layout
 app.get("/dashboard", function(req, res){
     console.log("#Dashboard");
-    res.render("dashboard", {title: 'Dashboard', layout: 'app', home: true, user: user});
+    res.render("dashboard", {title: 'Dashboard', home: true, user});
 });
-const port = 3000;
-app.listen(port, function(){
-    console.log("Listening on port " + port);
+app.get("/calendar", function(req, res){
+    console.log("#Calendar");
+    res.render("calendar-page", {title: 'Calendar', cal: true, user});
+});
+app.get("/add", function(req, res){
+    console.log("#Add");
+    res.render("add", {title: 'Add Transaction', add: true, user});
 });
