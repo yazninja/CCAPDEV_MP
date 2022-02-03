@@ -24,6 +24,10 @@ $(document).ready(function(){
         location.assign("/reg-page");
         console.log("register");
     });
+    $('.login').click(function () {
+        location.assign("/login-page");
+        console.log("login");
+    });
     $('.conv').click(function(){
         location.assign("/converter");
         console.log("conv");

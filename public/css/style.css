@@ -40,7 +40,7 @@ body {
 	font-weight: bold;
 }
 
-/*Buttons*/
+/*Register Button*/
 .register {
 	text-decoration: none;
 	font-weight: bold;
@@ -55,15 +55,38 @@ body {
 		transition: 0.1s;
 		background-color: #00cc66;
 	}
+/*Converter Button*/
+.conv {
+	text-decoration: none;
+	font-weight: bold;
+	display: inline-block;
+	padding: 14px 40px;
+	background-color: #00ff80;
+	border-radius: 12px;
+	color: black;
+	font-size: 15px;
+}
+
+	.conv:hover {
+		transition: 0.1s;
+		background-color: #00cc66;
+	}
 
 /*Login Button*/
-.login{
+.login {
 	text-decoration: none;
+	font-weight: bold;
 	display: inline-block;
-	padding: 8px 16px;
-	background-color: #04AA6D;
-	color: white;
+	padding: 14px 40px;
+	background-color: #00ff80;
+	border-radius: 12px;
+	color: black;
+	font-size: 15px;
 }
+	.login:hover {
+		transition: 0.1s;
+		background-color: #00cc66;
+	}
 
 /*Registration and Login Container*/
 .reglogin_container{
