@@ -5,11 +5,11 @@
                 <button class="inc activetab">Add Income</button>
                 <button class="exp">Add Expense</button>
             </div>
-            <form action="/add-transaction" method="post">
+            <!-- Income Tab -->
+            <form class="add_income" action="/add-income" method="post">
                 <div class="title">
                     <input type="text" name="title" placeholder="Title" maxlength="20" required>
                 </div>
-                <!-- Income Tab -->
                 <div class="add_income">
                     <div class="form_group">
                         <select name="iPresets" class="iPresets">
@@ -22,8 +22,24 @@
                         <i class="bar"></i>
                     </div>
                     <div class="form_group">
-                        <input type="text" name="iAmount" class="amount" required>
-                        <label for="iAmount" class="control_label">Amount</label>
+                        <input type="text" name="amount" class="amount" required>
+                        <label for="amount" class="control_label">Amount</label>
+                        <i class="bar"></i>
+                    </div>
+                    <div class="form_group">
+                        <select name="catergory" class="category">
+                            <option value="Salary">Salary</option>
+                            <option value="Allowance">Allowance</option>
+                            <option value="Petty Cash">Petty Cash</option>
+                            <option value="Bonus">Bonus</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <label for="catergory" class="control_label">Catergory:</label>
+                        <i class="bar"></i>
+                    </div>
+                    <div class="form_group custom_category">
+                        <input type="text" name="custom_category" class="custom_category">
+                        <label for="custom_category" class="control_label">Custom Category:</label>
                         <i class="bar"></i>
                     </div>
                     <div class="form_group">
@@ -38,26 +54,31 @@
                         <i class="bar"></i>
                     </div>
                     <div class="form_group">
-                        <input type="date" name="sDate" class="date" required>
-                        <label for="sDate" class="control_label">Start Date</label>
+                        <input type="date" name="date" class="date" required>
+                        <label for="date" class="control_label lbl_sDate">Start Date</label>
+                        <i class="bar"></i>
+                    </div>
+                    <div class="form_group eDate">
+                        <input type="date" name="recurringEndDate" class="date" required>
+                        <label for="recurringEndDate" class="control_label">End Date</label>
                         <i class="bar"></i>
                     </div>
                     <div class="form_group">
-                        <input type="date" name="eDate" class="date" required>
-                        <label for="eDate" class="control_label">End Date</label>
-                        <i class="bar"></i>
-                    </div>
-                    <div class="form_group">
-                        <input type="textarea" name="iDesc" class="desc">
-                        <label for="iDesc" class="control_label">Description</label>
+                        <input type="textarea" name="description" class="desc">
+                        <label for="description" class="control_label">Description</label>
                         <i class="bar"></i>
                     </div>
                     <div class="button-container">
                         <button type="submit" class="submit"><span>Add Income Data</span></button>
                     </div>
                 </div>
-                <!-- End of Income Tab -->
-                <!-- Expense Tab -->
+            </form>
+            <!-- End of Income Tab -->
+            <!-- Expense Tab -->
+            <form class="add_expense" action="/add-expense" method="post">
+                <div class="title">
+                    <input type="text" name="title" placeholder="Title" maxlength="20" required>
+                </div>
                 <div class="add_expense">
                     <div class="form_group">
                         <select name="ePresets" class="ePresets">
@@ -70,23 +91,12 @@
                         <i class="bar"></i>
                     </div>
                     <div class="form_group">
-                        <input type="text" name="eAmount" class="amount" required>
-                        <label for="eAmount" class="control_label">Amount</label>
+                        <input type="text" name="amount" class="amount" required>
+                        <label for="amount" class="control_label">Amount</label>
                         <i class="bar"></i>
                     </div>
                     <div class="form_group">
-                        <select name="repeat" name="repeat" class="repeat">
-                            <option value="0">Never</option>
-                            <option value="1">Daily</option>
-                            <option value="2">Weekly</option>
-                            <option value="3" selected>Monthly</option>
-                            <option value="4">Yearly</option>
-                        </select>
-                        <label for="repeat" class="control_label">Repeat</label>
-                        <i class="bar"></i>
-                    </div>
-                    <div class="form_group">
-                        <select name="catergory" class="catergory">
+                        <select name="catergory" class="category">
                             <option value="0">Food</option>
                             <option value="1">Transportation</option>
                             <option value="2">Entertainment</option>
@@ -96,19 +106,36 @@
                         <label for="catergory" class="control_label">Catergory:</label>
                         <i class="bar"></i>
                     </div>
-                    <div class="form_group">
+                    <div class="form_group custom_category">
                         <input type="text" name="custom_category" class="custom_category">
                         <label for="custom_category" class="control_label">Custom Category:</label>
                         <i class="bar"></i>
-                    </div>  
+                    </div>
                     <div class="form_group">
-                        <input type="date" name="sDate" class="date" required>
-                        <label for="sDate" class="control_label">Start Date</label>
+                        <select name="repeat" name="repeat" class="erepeat">
+                            <option value="0">Never</option>
+                            <option value="1">Daily</option>
+                            <option value="2">Weekly</option>
+                            <option value="3" selected>Monthly</option>
+                            <option value="4">Yearly</option>
+                        </select>
+                        <label for="repeat" class="control_label">Repeat</label>
+                        <i class="bar"></i>
+                    </div>
+                    
+                    <div class="form_group">
+                        <input type="date" name="date" class="date" required>
+                        <label for="date" class="control_label elbl_sDate">Start Date</label>
+                        <i class="bar"></i>
+                    </div>
+                    <div class="form_group eeDate">
+                        <input type="date" name="recurringEndDate" class="date" required>
+                        <label for="recurringEndDate" class="control_label">End Date</label>
                         <i class="bar"></i>
                     </div>
                     <div class="form_group">
-                        <input type="date" name="eDate" class="date" required>
-                        <label for="eDate" class="control_label">End Date</label>
+                        <input type="textarea" name="description" class="desc">
+                        <label for="description" class="control_label">Description</label>
                         <i class="bar"></i>
                     </div>
                     <div class="button-container">
