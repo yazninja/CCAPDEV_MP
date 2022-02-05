@@ -11,142 +11,43 @@ const options = { useNewUrlParser: true, useUnifiedTopology: true };
 mongoose.connect(dbURL, options, function () {
     console.log("Connected to DB @ " + dbURL);
 });
-const User = require("./database/models/User");
-const Transaction = require("./database/models/Transaction");
-var user = new User();
+const appRouter = require('./routes/appRoutes');
+// const session = require('express-session');
+// const flash = require('connect-flash');
+// const MongoStore = require('connect-mongo')(session);
+// var user = new User();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
-
 app.use(express.static(__dirname = "./public"));
+// Session  
+// app.use(session({
+//     secret: 'somegibberishsecret',
+//     store: new MongoStore({ mongooseConnection: mongoose.connection }),
+//     resave: false,
+//     saveUninitialized: true,
+//     cookie: { secure: false, maxAge: 1000 * 60 * 60 * 24 * 7 }
+// }));
+// Flash
+// app.use(flash());
+
+// Global messages vars
+// app.use((req, res, next) => {
+//   res.locals.success_msg = req.flash('success_msg');
+//   res.locals.error_msg = req.flash('error_msg');
+//   next();
+// });
 
 app.set("view engine", "hbs");
 app.engine("hbs", engine({ extname: "hbs", handlebars: allowInsecurePrototypeAccess(Handlebars) }));
 
-
-const port = 3000;
-app.listen(port, function () {
-    console.log("Listening on port " + port);
-});
-// Pages using start layout
 app.get("/", function (req, res) {
     console.log("#Home Page");
     res.render("index", { title: 'PesoTrack', layout: 'start' });
 });
-app.get("/reg-page", function (req, res) {
-    console.log("#Register");
-    res.render("register", { title: 'Register', style2: true, layout: 'start' });
-});
-app.get("/login-page", function (req, res) {
-    console.log("#Login");
-    res.render("login", { title: 'Login', style2: true, layout: 'start' });
-});
-// Post processes
-app.post("/register", function (req, res) {
-    delete req.body.pass2;
-    console.log(req.body);
-    User.find({ username: req.body.username }).exec(function (err, results) {
-        var count = results.length;
-        console.log("Count: " + count);
-        if (count == 0) {
-            User.create(req.body, (error, creation) => {
-                user = creation;
-                res.redirect("/dashboard");
-            });
-        }
-        else {
-            res.render("register", { title: 'Register', layout: 'start', style2: true, msg: "Username already exists" });
-        }
-    });
-});
-app.post("/login", function (req, res) {
+app.use("/app", appRouter);
 
-    User.find({ username: req.body.username, password: req.body.pass }).exec(function (err, results) {
-        var count = results.length;
-        console.log("Count: " + count);
-        if (count == 0) {
-            res.render("login", { title: 'Login', layout: 'start', style2: true, msg: "Username/Password is incorrect" });
-        }
-        else {
-            user = results[0];
-            res.redirect("/dashboard");
-        }
-    });
-});
-// Pages using main layout
-app.get("/dashboard", function (req, res) {
-    console.log("#Dashboard");
-    res.render("dashboard", { title: 'Dashboard', home: true, user });
-});
-app.get("/calendar", function (req, res) {
-    console.log("#Calendar");
-    res.render("calendar-page", { title: 'Calendar', cal: true, user });
-});
-app.get("/add", function (req, res) {
-    console.log("#Add");
-    res.render("add", { title: 'Add Transaction', add: true, user });
-});
-app.get("/remove", function (req, res) {
-    console.log("#Remove");
-    Transaction.find({ username: user.username }).exec(function (err, transactions) {
-        console.log(transactions);
-        res.render("remove", { title: 'Remove Transaction', remove: true, user, transactions});
-    });
-});
-app.post("/add-income", function(req, res) {
-    console.log("#Add Income");
-    delete req.body.iPresets;
-    req.body.username = user.username;
-    req.body.type = "income";
-    req.body.amount = parseFloat(req.body.amount.substr(4).replace(/,/g, ''))
-    if(req.body.custom_category) {
-        req.body.category = req.body.custom_category;
-    }
-    else{
-        delete req.body.custom_category;
-    }
-    if(req.body.repeat == 0)
-    {
-        req.body.recurring = false;
-    }
-    else{
-        req.body.recurring = true;
-        req.body.recurringType = parseInt(req.body.repeat);
-    }
-    delete req.body.repeat;
-    console.log(req.body);
-    Transaction.create(req.body, (error, creation) => {
-        res.redirect("/dashboard");
-
-    });
-});
-app.post("/add-transaction-income", function(req, res){
-    req.body.type=income;
-    req.body.username = user.username;
-    delete req.body.iPresets;
-    if(req.body.repeat == 0){
-       
-        req.body.reccuring = false;
-    }
-    else if(req.body.repeat == 1){
-        req.body.reccuring = true;
-        req.body.reccuringType = "Daily";
-    }
-    else if(req.body.repeat == 2){
-        req.body.reccuring = true;
-        req.body.reccuringType = "Weekly";
-    }
-    else if(req.body.repeat == 3){
-        req.body.reccuring = true;
-        req.body.reccuringType = "Monthly";
-    }
-    else if(req.body.repeat == 4){
-        req.body.reccuring = true;
-        req.body.reccuringType = "Yearly";
-    }
-    delete req.body.repeat;
-    console.log("#Add Transaction");
-    console.log(req.body);
-    res.redirect("/dashboard");
+const port = 3000;
+app.listen(port, function () {
+    console.log("Listening on port " + port);
 });
