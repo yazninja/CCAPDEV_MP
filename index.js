@@ -121,3 +121,32 @@ app.post("/add-income", function(req, res) {
 
     });
 });
+app.post("/add-transaction-income", function(req, res){
+    req.body.type=income;
+    req.body.username = user.username;
+    delete req.body.iPresets;
+    if(req.body.repeat == 0){
+       
+        req.body.reccuring = false;
+    }
+    else if(req.body.repeat == 1){
+        req.body.reccuring = true;
+        req.body.reccuringType = "Daily";
+    }
+    else if(req.body.repeat == 2){
+        req.body.reccuring = true;
+        req.body.reccuringType = "Weekly";
+    }
+    else if(req.body.repeat == 3){
+        req.body.reccuring = true;
+        req.body.reccuringType = "Monthly";
+    }
+    else if(req.body.repeat == 4){
+        req.body.reccuring = true;
+        req.body.reccuringType = "Yearly";
+    }
+    delete req.body.repeat;
+    console.log("#Add Transaction");
+    console.log(req.body);
+    res.redirect("/dashboard");
+});

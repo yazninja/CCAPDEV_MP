@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 
 const TransactionSchema = new mongoose.Schema({
+
     title: String, // Title of the transaction
     username: String, // username of the user who made the transaction
     type: String, // income or expense
