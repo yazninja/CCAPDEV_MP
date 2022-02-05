@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
-const User = require("../database/models/User");
-const Transaction = require("../database/models/Transaction");
+const UserController = require('../controllers/UserController'); // Import UserController
+const TransactionController = require('../controllers/TransactionController'); // Import TransactionController
 
 // Pages using start layout
 router.get("/reg-page", function (req, res) {
@@ -30,19 +30,8 @@ router.post("/register", function (req, res) {
         }
     });
 });
-router.post("/login", function (req, res) {
+router.post("/login");
 
-    User.find({ username: req.body.username, password: req.body.pass }).exec(function (err, results) {
-        var count = results.length;
-        console.log("Count: " + count);
-        if (count == 0) {
-            res.render("login", { title: 'Login', layout: 'start', style2: true, msg: "Username/Password is incorrect" });
-        }
-        else {
-            res.redirect("dashboard");
-        }
-    });
-});
 // Pages using main layout
 router.get("/dashboard", function (req, res) {
     console.log("#Dashboard");
