@@ -1,8 +1,8 @@
 const mongoose = require('mongoose')
 
 const TransactionSchema = new mongoose.Schema({
-    id: Number,
     username: String,
+    Title: String,
     type: String,
     amount: Number,
     date: Date,
@@ -10,9 +10,7 @@ const TransactionSchema = new mongoose.Schema({
     category: String,
     recurring: Boolean,
     recurringType: String,
-    recurringEndDate: String,
-    recurringFrequency: Number,
-    tags: Array,
+    recurringEndDate: String
 })
 
 const Transaction = mongoose.model('Transaction', TransactionSchema)

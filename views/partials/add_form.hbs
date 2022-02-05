@@ -5,7 +5,7 @@
                 <button class="inc activetab">Add Income</button>
                 <button class="exp">Add Expense</button>
             </div>
-            <form action="/add-transaction" method="post">
+            <form action="/add-transaction-income" method="post" class="add_income">
                 <div class="title">
                     <input type="text" name="title" placeholder="Title" maxlength="20" required>
                 </div>
@@ -56,6 +56,8 @@
                         <button type="submit" class="submit"><span>Add Income Data</span></button>
                     </div>
                 </div>
+                </form>
+                <form action="/add-transaction-expense" method="post" class="add_expense">
                 <!-- End of Income Tab -->
                 <!-- Expense Tab -->
                 <div class="add_expense">

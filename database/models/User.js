@@ -7,7 +7,6 @@ const UserSchema = new mongoose.Schema({
     password: String,
     currMonthlyExpense: Number,
     currMonthlyIncome: Number,
-    transactions: { type : Array , "default" : [] }
 })
 
 const User = mongoose.model('User', UserSchema)
