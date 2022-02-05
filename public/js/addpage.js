@@ -29,6 +29,7 @@ $(document).ready(function () {
         $('.iPresets').val("custom");
         if ($('.repeat').val() == "0") {
             $('.eDate').fadeOut();
+            $('.eDate input').attr('required', false);
             $('.lbl_sDate').text("Date");
         }
         else {
@@ -40,6 +41,7 @@ $(document).ready(function () {
         $('.ePresets').val("custom");
         if ($('.erepeat').val() == "0") {
             $('.eeDate').fadeOut();
+            $('.eeDate input').attr('required', false);
             $('.elbl_sDate').text("Date");
         }
         else {

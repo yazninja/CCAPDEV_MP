@@ -1,0 +1,24 @@
+<div class="transaction">
+    <div class="transaction-info">
+        <h1>{{this.title}} </h1>
+        <h2>{{this.description}}</h2>
+        <span class="amount">PHP {{this.amount}}</span>
+        {{#if this.recurring}}
+        {{!-- {{#eq this.recurring.type 1}}
+        <span class="recurring">Repeats Daily</span>
+        {{else eq this.recurring.type 2}}
+        <span class="recurring">Repeats Weekly</span>
+        {{else eq this.recurring.type 3}}
+        <span class="recurring">Repeats Monthly</span>
+        {{else eq this.recurring.type 4}}
+        <span class="recurring">Repeats Yearly</span>
+        {{/eq}} --}}
+        {{/if}}
+    </div>
+
+    <div class="transaction_buttons">
+        <img src="../img/edit.png" class="edit_transaction" alt="Edit">
+        <img src="../img/delete.png" class="delete_transaction" alt="Delete">
+    </div>
+    <i class="bar"></i>
+</div>

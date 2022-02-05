@@ -10,7 +10,7 @@ const TransactionSchema = new mongoose.Schema({
     category: String, // category of the transaction
     recurring: Boolean, // whether the transaction is recurring
     recurringType: Number, // type of recurring transaction
-    recurringEndDate: String // end date of recurring transaction
+    recurringEndDate: Date // end date of recurring transaction
 })
 
 const Transaction = mongoose.model('Transaction', TransactionSchema)

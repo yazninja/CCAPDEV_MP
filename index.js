@@ -15,7 +15,6 @@ const User = require("./database/models/User");
 const Transaction = require("./database/models/Transaction");
 var user = new User();
 
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -24,6 +23,7 @@ app.use(express.static(__dirname = "./public"));
 
 app.set("view engine", "hbs");
 app.engine("hbs", engine({ extname: "hbs", handlebars: allowInsecurePrototypeAccess(Handlebars) }));
+
 
 const port = 3000;
 app.listen(port, function () {
@@ -87,6 +87,13 @@ app.get("/add", function (req, res) {
     console.log("#Add");
     res.render("add", { title: 'Add Transaction', add: true, user });
 });
+app.get("/remove", function (req, res) {
+    console.log("#Remove");
+    Transaction.find({ username: user.username }).exec(function (err, transactions) {
+        console.log(transactions);
+        res.render("remove", { title: 'Remove Transaction', remove: true, user, transactions});
+    });
+});
 app.post("/add-income", function(req, res) {
     console.log("#Add Income");
     delete req.body.iPresets;
@@ -101,7 +108,7 @@ app.post("/add-income", function(req, res) {
     }
     if(req.body.repeat == 0)
     {
-        re.body.recurring = false;
+        req.body.recurring = false;
     }
     else{
         req.body.recurring = true;
