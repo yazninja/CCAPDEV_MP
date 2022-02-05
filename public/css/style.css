@@ -1,17 +1,26 @@
-body{
+body {
 	overflow: hidden;
+	font-family: 'Poppins', sans-serif;
 }
+
 /*Website logo*/
-.logo{
-	width:70px;
-	height:70px;
+.logo {
+	width: 70px;
+	height: 70px;
 	padding: 10px;
+}
+/*Quotation*/
+.quote {
+	text-align: center;
+	font-weight: bold;
+	font-size: 60px;
+	font-family: 'Gravitas One', cursive;
 }
 /*Homepage Header*/
 .home_header{
 	display: flex;
 	align-items: center;
-	margin: 0 -10px;
+	margin: 0 100px;
 	justify-content: space-between;
 }
 
@@ -23,34 +32,67 @@ body{
 }
 
 /*Site logo*/
-.site_logo{
+.site_logo {
 	display: flex;
 	align-items: center;
+	font-size: 25px;
+	font-family: 'Gravitas One', cursive;
+	font-weight: bold;
 }
 
 /*Register Button*/
-.register{
+.register {
 	text-decoration: none;
+	font-weight: bold;
 	display: inline-block;
-	padding: 8px 16px;
-	background-color: #f1f1f1;
+	padding: 14px 40px;
+	background-color: #00ff80;
+	border-radius: 12px;
 	color: black;
+	font-size: 15px;
+}
+	.register:hover {
+		transition: 0.1s;
+		background-color: #00cc66;
+	}
+/*Converter Button*/
+.conv {
+	text-decoration: none;
+	font-weight: bold;
+	display: inline-block;
+	padding: 14px 40px;
+	background-color: #00ff80;
+	border-radius: 12px;
+	color: black;
+	font-size: 15px;
 }
 
+	.conv:hover {
+		transition: 0.1s;
+		background-color: #00cc66;
+	}
+
 /*Login Button*/
-.login{
+.login {
 	text-decoration: none;
+	font-weight: bold;
 	display: inline-block;
-	padding: 8px 16px;
-	background-color: #04AA6D;
-	color: white;
+	padding: 14px 40px;
+	background-color: #00ff80;
+	border-radius: 12px;
+	color: black;
+	font-size: 15px;
 }
+	.login:hover {
+		transition: 0.1s;
+		background-color: #00cc66;
+	}
 
 /*Registration and Login Container*/
 .reglogin_container{
 	background: #04c880;
 	width: 500px;
-	height: 500px;
+	height: 800px;
 	display: flex;
 	align-items: center;
 	flex-direction: column;
@@ -89,6 +131,10 @@ input[type=submit]{
 .float_slogan {
 	padding: 5%;
 	background-size: cover;
+	background: #00cc66;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
 }
 
 .flt_chld_content1 {
@@ -98,11 +144,14 @@ input[type=submit]{
 	background-size: cover;
 }
 
+
 .img_logo {
-	background-size: auto;
-	position: fixed;
-	right: 10%;
-	bottom: 25%;
+	background-size: cover;
+	position: sticky;
+	height:500px;
+	width:500px;
+/*	right: 10%;
+	bottom: 25%;*/
 }
 
 .flt_buttons {

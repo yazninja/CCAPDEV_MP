@@ -1,16 +1,41 @@
+<!DOCTYPE html>
 <html>
-<head>
-    <title>MC01 || PesoTrack</title>
-    <link rel="stylesheet" type="text/css" media="all" href="/css/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-</head>
+    <head>
+        <title>MCO1 || {{ title }}</title>
+        <link rel="icon" type="image/png" href="../img/expensetracker.png"> 
+        <link rel="stylesheet" href="../css/style2.css">
+        <link rel="stylesheet" type="text/css" media="all" href="../css/formstyle.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="../js/jquery.maskMoney.min.js"></script>
 
-<body>
-
-    {{{body}}}
-
-</body>
-
-
+    </head>
+    <body>
+        <script src="../js/script.js"></script>
+        <div class="side-menu">
+            <div class="logo">
+                <img src="../img/expensetracker.png" alt="Expense Tracker Logo">
+                <h1>PesoTrack</h1>
+            </div>
+            <ul>
+                <li class="home {{#if home}}active{{/if}}"><img src="../img/dashboard_white.png" alt="">&nbsp;<span>Dashboard</span> </li>
+                <li class="account {{#if account}}active{{/if}}"><img src="../img/reading-book_white.png" alt="">&nbsp;<span>Account</span> </li>
+                <li class="cal {{#if cal}}active{{/if}}"><img src="../img/teacher2_white.png" alt="">&nbsp;<span>Calendar</span> </li>
+                <li class="add {{#if add}}active{{/if}}"><img src="../img/payment_white.png" alt="">&nbsp;<span>Add Transaction</span> </li>
+                <li class="remove {{#if remove}}active{{/if}}"><img src="../img/payment_white.png" alt="">&nbsp;<span>Remove Transaction</span> </li>
+                <li class="settings {{#if setting}}active{{/if}}"><img src="../img/settings_white.png" alt="">&nbsp;<span>Settings</span> </li> 
+                <li class="signout"><img src="../img/signout_white.png" alt="">&nbsp;<span>Sign Out</span> </li> 
+            </ul>
+            <div class="user">
+                <div class="img-case">
+                    <img src="../img/user.png" alt="User Image">
+                </div>
+                <div class="user-text">
+                    <h1>{{user.firstName}} {{user.lastName}}</h1>
+                    <h2>@{{user.username}}</h2>
+                </div>
+            </div>
+        </div> 
+        {{{ body }}}
+    </body>
 
 </html>
