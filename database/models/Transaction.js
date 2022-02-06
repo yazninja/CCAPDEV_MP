@@ -1,5 +1,9 @@
 const mongoose = require('mongoose')
-
+const dbURL = 'mongodb://localhost:27017/pesotrack';
+const options = { useNewUrlParser: true, useUnifiedTopology: true };
+mongoose.connect(dbURL, options, function () {
+    console.log("Connected to DB @ " + dbURL);
+});
 const TransactionSchema = new mongoose.Schema({
 
     title: String, // Title of the transaction

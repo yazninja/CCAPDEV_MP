@@ -17,7 +17,7 @@ $(document).ready(function(){
         console.log("remove");
     });
     $('.signout').click(function(){
-        location.assign("/");
+        location.assign("/logout");
         console.log("signout");
     });
     $('.register').click(function(){
