@@ -15,13 +15,24 @@ const UserSchema = new mongoose.Schema({
 
 const UserModel = mongoose.model('User', UserSchema);
 
-exports.findUser = function (username,next) {
-    UserModel.findOne({ username: username }, function (err, user) {
-        if (err) {
-            next(err);
-        }
-        else {
-            next(null, user);
-        }
+// Create a new user
+exports.create = function (obj, next) {
+    const user = new UserModel(obj);
+    user.save(function (err, user) {
+        next(err, user);
+    });
+};
+
+// Find a user by username
+exports.getById = function(id, next) {
+    UserModel.findById(id, function(err, user) {
+        next(err, user);
+    });
+};
+
+// Retrieving one user by query
+exports.getOne = function(query, next) {
+    UserModel.findOne(query, function(err, user) {
+        next(err, user);
     });
 };

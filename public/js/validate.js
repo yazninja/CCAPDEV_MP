@@ -17,7 +17,7 @@ $(document).ready(function () {
         else {
             $('.submit').attr('disabled', false);
             $('.submit').css('background-color', '#04AA6D');
-            $('.submit').text("Submit");
+            $('.submit').text("Register");
             $('div.pass2').removeClass('has-error');
         }
     }

@@ -3,39 +3,12 @@ const router = require('express').Router();
 const UserController = require('../controllers/UserController'); // Import UserController
 const TransactionController = require('../controllers/TransactionController'); // Import TransactionController
 
-// Pages using start layout
-router.get("/reg-page", function (req, res) {
-    console.log("#Register");
-    res.render("register", { title: 'Register', style2: true, layout: 'start' });
-});
-router.get("/login-page", function (req, res) {
-    console.log("#Login");
-    res.render("login", { title: 'Login', style2: true, layout: 'start' });
-});
-// Post processes
-router.post("/register", function (req, res) {
-    delete req.body.pass2;
-    console.log(req.body);
-    User.find({ username: req.body.username }).exec(function (err, results) {
-        var count = results.length;
-        console.log("Count: " + count);
-        if (count == 0) {
-            User.create(req.body, (error, creation) => {
-                user = creation;
-                res.redirect("dashboard");
-            });
-        }
-        else {
-            res.render("register", { title: 'Register', layout: 'start', style2: true, msg: "Username already exists" });
-        }
-    });
-});
-router.post("/login");
+
 
 // Pages using main layout
 router.get("/dashboard", function (req, res) {
     console.log("#Dashboard");
-    res.render("dashboard", { title: 'Dashboard', home: true, user });
+    res.render("dashboard", { title: 'Dashboard', home: true, session: req.session});
 });
 router.get("/calendar", function (req, res) {
     console.log("#Calendar");
