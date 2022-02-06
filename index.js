@@ -6,7 +6,7 @@ const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-ac
 // Routers
 const appRouter = require('./routes/appRoutes');
 const authRouter = require('./routes/auth');
-
+const { isPublic } = require('./middlewares/checkAuth');
 const session = require('express-session');
 const flash = require('connect-flash');
 const MongoStore = require('connect-mongo');
@@ -35,7 +35,7 @@ app.use((req, res, next) => {
 app.set("view engine", "hbs");
 app.engine("hbs", engine({ extname: "hbs", handlebars: allowInsecurePrototypeAccess(Handlebars) }));
 
-app.get("/", function (req, res) {
+app.get("/", isPublic, function (req, res) {
     console.log("#Home Page");
     res.render("index", { title: 'PesoTrack', layout: 'start' });
 });

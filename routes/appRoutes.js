@@ -2,30 +2,31 @@ const router = require('express').Router();
 
 const UserController = require('../controllers/UserController'); // Import UserController
 const TransactionController = require('../controllers/TransactionController'); // Import TransactionController
+const { isPublic, isPrivate } = require('../middlewares/checkAuth');
 
 
 
 // Pages using main layout
-router.get("/dashboard", function (req, res) {
+router.get("/dashboard", isPrivate, function (req, res) {
     console.log("#Dashboard");
     res.render("dashboard", { title: 'Dashboard', home: true, session: req.session});
 });
-router.get("/calendar", function (req, res) {
+router.get("/calendar", isPrivate, function (req, res) {
     console.log("#Calendar");
     res.render("calendar-page", { title: 'Calendar', cal: true, user });
 });
-router.get("/add", function (req, res) {
+router.get("/add", isPrivate, function (req, res) {
     console.log("#Add");
     res.render("add", { title: 'Add Transaction', add: true, user });
 });
-router.get("/remove", function (req, res) {
+router.get("/remove", isPrivate, function (req, res) {
     console.log("#Remove");
     Transaction.find({ username: user.username }).exec(function (err, transactions) {
         console.log(transactions);
         res.render("remove", { title: 'Remove Transaction', remove: true, user, transactions});
     });
 });
-router.post("/add-income", function(req, res) {
+router.post("/add-income", isPrivate, function(req, res) {
     console.log("#Add Income");
     delete req.body.iPresets;
     req.body.username = user.username;
@@ -52,7 +53,7 @@ router.post("/add-income", function(req, res) {
 
     });
 });
-router.post("/add-transaction-income", function(req, res){
+router.post("/add-transaction-income", isPrivate, function(req, res){
     req.body.type=income;
     req.body.username = user.username;
     delete req.body.iPresets;
