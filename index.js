@@ -3,7 +3,10 @@ const app = express();
 const Handlebars = require('handlebars');
 const { engine } = require("express-handlebars");
 const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-access')
+// Routers
 const appRouter = require('./routes/appRoutes');
+const authRouter = require('./routes/auth');
+
 const session = require('express-session');
 const flash = require('connect-flash');
 const MongoStore = require('connect-mongo');
@@ -37,6 +40,7 @@ app.get("/", function (req, res) {
     res.render("index", { title: 'PesoTrack', layout: 'start' });
 });
 app.use("/app", appRouter);
+app.use("/", authRouter);
 
 const port = 3000;
 app.listen(port, function () {
