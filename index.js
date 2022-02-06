@@ -39,7 +39,7 @@ app.get("/", isPublic, function (req, res) {
     console.log("#Home Page");
     res.render("index", { title: 'PesoTrack', layout: 'start' });
 });
-app.use("/app", appRouter);
+app.use("/", appRouter);
 app.use("/", authRouter);
 
 const port = 3000;

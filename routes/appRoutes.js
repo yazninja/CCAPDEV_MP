@@ -3,21 +3,33 @@ const router = require('express').Router();
 const UserController = require('../controllers/UserController'); // Import UserController
 const TransactionController = require('../controllers/TransactionController'); // Import TransactionController
 const { isPublic, isPrivate } = require('../middlewares/checkAuth');
+const e = require('connect-flash');
 
 
 
 // Pages using main layout
-router.get("/dashboard", isPrivate, function (req, res) {
-    console.log("#Dashboard");
-    res.render("dashboard", { title: 'Dashboard', home: true, session: req.session});
-});
+// router.get("/dashboard", isPrivate, function (req, res) {
+//     console.log("#Dashboard");
+//     UserController.findUser(req.session.user, function (err, user) {
+//         if(err) {
+//         console.log(err);
+//         }
+//         else{
+//             console.log(user);
+//         }
+//     });
+//     res.render("dashboard", { title: 'Dashboard', home: true, session: req.session});
+// });
+router.get("/dashboard", isPrivate, UserController.findUser);
+
+
 router.get("/calendar", isPrivate, function (req, res) {
     console.log("#Calendar");
-    res.render("calendar-page", { title: 'Calendar', cal: true, user });
+    res.render("calendar-page", { title: 'Calendar', cal: true, session: req.session });
 });
 router.get("/add", isPrivate, function (req, res) {
     console.log("#Add");
-    res.render("add", { title: 'Add Transaction', add: true, user });
+    res.render("add", { title: 'Add Transaction', add: true, session: req.session });
 });
 router.get("/remove", isPrivate, function (req, res) {
     console.log("#Remove");

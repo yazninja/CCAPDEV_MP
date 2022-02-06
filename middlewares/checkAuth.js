@@ -10,7 +10,7 @@ exports.isPrivate = (req, res, next) => {
   exports.isPublic = (req, res, next) => {
     // If authenticated, go to home page
     if (req.session.user) {
-      res.redirect('/app/dashboard');
+      res.redirect('/dashboard');
     } else {
       return next();
     }
