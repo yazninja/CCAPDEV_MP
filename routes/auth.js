@@ -15,6 +15,6 @@ router.get('/register', function (req, res) {
 router.post('/register', isPublic, registerValidation, UserController.registerUser);
 router.post('/login', isPublic, UserController.loginUser);
 // logout
-// router.get('/logout', isPrivate, UserController.logoutUser);
+router.get('/logout', isPrivate, UserController.logoutUser);
 
 module.exports = router;

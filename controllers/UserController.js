@@ -92,3 +92,11 @@ exports.loginUser = function (req, res) {
         }
     });
 };
+exports.logoutUser = function (req, res) {
+    if(req.session) {
+        req.session.destroy(function(){
+            res.clearCookie('connect.sid');
+            res.redirect('/');
+        });
+    }
+};
