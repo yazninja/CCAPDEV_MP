@@ -443,3 +443,32 @@ form input:focus{
   border-bottom: 0.0625rem solid #999;
   display: block;
 }
+.form_container .red{
+  color:white;
+  display: block;
+  background-color: rgba(217, 83, 79, 0.8);
+  font-size: 2.5rem;
+  text-align: center;
+  padding:0.5rem;
+}
+.form_container .green{
+  color:white;
+  display: block;
+  background-color: rgba(34,166,93,0.8);
+  font-size: 2.5rem;
+  text-align: center;
+  padding:0.5rem;
+}
+
+.form_container p{
+  text-align: center;
+  font-size: medium;
+  padding-bottom: 3rem;
+}
+.form_container p a{
+  color: #04AA6D;
+}
+.form_container p a:hover{
+  color: #026641;
+  transition: color 0.3s;
+}
