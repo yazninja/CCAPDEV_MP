@@ -13,8 +13,8 @@ $(document).ready(function(){
         console.log("add");
     });
     $('.remove').click(function(){
-        location.assign("/remove");
-        console.log("remove");
+        location.assign("/edit");
+        console.log("edit");
     });
     $('.signout').click(function(){
         location.assign("/logout");

@@ -1,7 +1,11 @@
 <div class="container">
     <div class="transaction_container">
-        {{#each transactions}}
-        {{> transaction}}
-        {{/each}}
+        {{#if transactions}}
+            {{#each transactions}}
+            {{> transaction}}
+            {{/each}}
+        {{else}}
+            <span> Uh oh! It looks like you do not have any transactions. <a href="/add">Add one now</a>!</span>
+        {{/if}}
     </div>
 </div>

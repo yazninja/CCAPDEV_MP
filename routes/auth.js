@@ -8,8 +8,8 @@ router.get('/login', isPublic, function (req, res) {
     res.render('login', { title: 'Login', style2: true, layout: 'start'});
 });
 // GET register to display register page
-router.get('/register', function (req, res) {
-    res.render('register', isPublic, { title: 'Register', style2: true, layout: 'start' });
+router.get('/register', isPublic, function (req, res) {
+    res.render('register', { title: 'Register', style2: true, layout: 'start' });
 });
 // POST methods for form submission
 router.post('/register', isPublic, registerValidation, UserController.registerUser);
