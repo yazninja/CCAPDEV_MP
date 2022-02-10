@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="setaccount.css">   
+</head>
+<body>
+<div class="container">
+    <div class="profile">
+        <h1>Profle Information</h1>
+        <h2>Profile Picture</h2>
+        <br>
+        <div class="profile-pic-div">
+            <img src="user.png" id="photo">
+            <input type="file" id="file">
+            <label for="file" id="uploadBtn">Choose Photo</label>
+        </div>
+        <br><br><br><br><br><br><br><br>
+
+        <h1>Personal Information</h1>
+        <div id="fade1">
+        <h2>Full Name</h2>
+            <input type="text" class="input" id="acfullname" value="dummy">
+            <h2>Birthday</h2>
+            <input type="text" class="input" id="acbirthday" value="dummy">
+            <h2>Email</h2>
+            <input type="text" class="input" id="acemail" value="dummy">
+            <h2>Password</h2>
+            <input type="password" class="input" id="acpassword" value="dummy">
+        </div>
+
+        <h1>Payment Information</h1>
+        <div id="fade2">
+            <h2>Payment Method</h2>
+            <input type="text" class="input" id="paymethod" value="dummy">
+            <h2>Billing Address</h2>
+            <input type="text" class="input" id="billaddress" value="dummy">
+            <h2>Zip Code</h2>
+            <input type="text" class="input" id="zipcode" value="dummy">
+            <br><br>
+        </div>
+        <input type="button" value="Show/Hide Name" onclick="toggle()"/>
+    </div>
+</div>
+    <script src="showhide.js"></script>
+    <script src="profileupload.js"></script>
+</body>
+</html>
