@@ -21,11 +21,11 @@ $(document).ready(function(){
         console.log("signout");
     });
     $('.register').click(function(){
-        location.assign("/reg-page");
+        location.assign("/register");
         console.log("register");
     });
     $('.login').click(function () {
-        location.assign("/login-page");
+        location.assign("/login");
         console.log("login");
     });
     $('.conv').click(function(){
