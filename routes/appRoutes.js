@@ -26,7 +26,8 @@ router.get("/remove", isPrivate, function (req, res) {
 });
 router.get("/edit", isPrivate, TransactionController.getAllTransactions);
 // router.get("/settings", isPrivate);
-router.post("/add-income", isPrivate, isIncome, TransactionController.createTransaction);
-router.post("/add-expense", isPrivate, isExpense, TransactionController.createTransaction);
+
+router.post("/add-income", isPrivate, isIncome, TransactionController.addTransaction);
+router.post("/add-expense", isPrivate, isExpense, TransactionController.addTransaction);
 
 module.exports = router;

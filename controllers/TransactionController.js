@@ -1,7 +1,8 @@
 const TransactionModel = require("../database/models/Transaction");
-exports.createTransaction = function (req, res) {
-    console.log("#Create");
-    const { title, username, type, amount, date, description, category, recurring, recurringType, recurringEndDate } = req.body;
+
+//Create a new transaction
+exports.addTransaction = function (req, res) {
+    console.log("#Create");  const { title, username, type, amount, date, description, category, recurring, recurringType, recurringEndDate } = req.body;
     const transaction = {
         title,
         username,

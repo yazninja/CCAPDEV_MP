@@ -443,7 +443,7 @@ form input:focus{
   border-bottom: 0.0625rem solid #999;
   display: block;
 }
-.form_container .red{
+.form_container .red, .row .red{
   color:white;
   display: block;
   background-color: rgba(217, 83, 79, 0.8);
@@ -451,7 +451,7 @@ form input:focus{
   text-align: center;
   padding:0.5rem;
 }
-.form_container .green{
+.form_container .green, .row .green{
   color:white;
   display: block;
   background-color: rgba(34,166,93,0.8);
