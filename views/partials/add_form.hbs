@@ -1,16 +1,14 @@
 <add-form>
     <div class="container">
+        <div class="message">
+                {{> messages }}
+        </div>
         <div class="form_container">
             <div class="tab">
                 <button class="inc activetab">Add Income</button>
                 <button class="exp">Add Expense</button>
             </div>
-<<<<<<< HEAD
-            <form action="/add-transaction-income" method="post" class="add_income">
-=======
-            <!-- Income Tab -->
-            <form class="add_income" action="/add-income" method="post">
->>>>>>> a76f75fdac01507ac5a0582660189f759aa6f05d
+            <form action="/add-income" method="post" class="add_income">
                 <div class="title">
                     <input type="text" name="title" placeholder="Title" maxlength="20" required>
                 </div>

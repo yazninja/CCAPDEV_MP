@@ -1,18 +1,12 @@
-<div class="transaction">
+<div class="transaction-card">
     <div class="transaction-info">
         <h1>{{this.title}} </h1>
         <h2>{{this.description}}</h2>
-        <span class="amount">PHP {{this.amount}}</span>
+        <h2 class="date" >Date: {{this.date}}</h2>
+        {{!-- <script>console.log("Date:", {{this.date}})</script> --}}
+        <span class="amount">{{this.amount}}</span>
         {{#if this.recurring}}
-        {{!-- {{#eq this.recurring.type 1}}
-        <span class="recurring">Repeats Daily</span>
-        {{else eq this.recurring.type 2}}
-        <span class="recurring">Repeats Weekly</span>
-        {{else eq this.recurring.type 3}}
-        <span class="recurring">Repeats Monthly</span>
-        {{else eq this.recurring.type 4}}
-        <span class="recurring">Repeats Yearly</span>
-        {{/eq}} --}}
+            <span class="recurring">Repeats {{this.recurringType}}</span>
         {{/if}}
     </div>
 
@@ -22,3 +16,13 @@
     </div>
     <i class="bar"></i>
 </div>
+<script>
+    $(function () {
+        $('.amount').text("PHP " + parseFloat($('.amount').text(), 10).toFixed(2));
+        const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        date = new Date( $('.date').text())
+        console.log(date);
+        $('.date').text(months[date.getMonth()] + " " + date.getDate() + ", " + date.getFullYear());
+        
+    });
+</script>

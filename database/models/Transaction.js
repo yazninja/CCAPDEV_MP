@@ -14,10 +14,37 @@ const TransactionSchema = new mongoose.Schema({
     description: String, // description of the transaction
     category: String, // category of the transaction
     recurring: Boolean, // whether the transaction is recurring
-    recurringType: Number, // type of recurring transaction
+    recurringType: String, // type of recurring transaction
     recurringEndDate: Date // end date of recurring transaction
 })
 
-const Transaction = mongoose.model('Transaction', TransactionSchema)
+const TransactionModel = mongoose.model('Transaction', TransactionSchema)
 
-module.exports = Transaction;
+// Create a new transaction
+exports.create = function (obj, next) {
+    const transaction = new TransactionModel(obj);
+    transaction.save(function (err, user) {
+        next(err, user);
+    });
+};
+
+// Find all transactions by username
+exports.getAllFromUser = function (username, next) {
+    TransactionModel.find({ username: username }, function (err, transactions) {
+        next(err, transactions);
+    });
+};
+
+// Delete transaction by id
+exports.deleteById = function (id, next) {
+    TransactionModel.deleteOne({ _id: id }, function (err, transaction) {
+        next(err, transaction);
+    });
+};
+
+// Update transaction by id
+exports.updateById = function (id, obj, next) {
+    TransactionModel.updateOne({ _id: id }, obj, function (err, transaction) {
+        next(err, transaction);
+    });
+};

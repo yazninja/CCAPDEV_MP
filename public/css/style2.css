@@ -518,3 +518,68 @@ html {
     height:100%;
     width:100%;
   }
+  .transaction_container h1{
+    color:#000;
+    text-align: center;
+    font-weight: bold;
+  }
+  .transaction-card{
+    display: flex;
+    height: 8rem;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    margin: 2rem;
+    background-color: #eee;
+  }
+  .transaction-card .transaction_buttons{
+    display: flex;
+    flex-direction: row;
+    align-items: right;
+    right:0;
+    position: absolute;
+    margin-right: 3rem;
+  }
+  .edit_transaction, .delete_transaction{
+    width: 3rem;
+    height: 3rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  .transaction-card .transaction-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    width:85%;
+    position: relative;
+  }
+  .transaction_container .transaction-info h1{
+    font-size: 2.5rem;
+    text-align: left;
+    margin: 0;
+    color: #000;
+  }
+  .transaction-info h2{
+    font-size: 1.5rem;
+    margin: 0;
+  }
+  .transaction-info span{
+    font-size: 2rem;
+    position: absolute;
+    right:0;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+  }
+  span.amount{
+    color: #04AA6D;
+    top:0;
+  }
+  span.recurring{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #444;
+    font-size: 1.25rem;
+    bottom:20%;
+  }
+  

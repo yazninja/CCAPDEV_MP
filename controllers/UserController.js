@@ -76,7 +76,7 @@ exports.loginUser = function (req, res) {
                         req.session.lastName = user.lastName;
                         console.log(req.session);
 
-                        res.redirect('/app/dashboard');
+                        res.redirect('/dashboard');
                     } else {
                         // passwords don't match
                         req.flash('error_msg', 'Incorrect password. Please try again.');
@@ -99,4 +99,19 @@ exports.logoutUser = function (req, res) {
             res.redirect('/');
         });
     }
+};
+exports.findUser = function (req,res) {
+    console.log(req.session.user);
+    const { user } = req.session;
+    UserModel.getById(user, function (err, user){
+        if (err) {
+            // Database error occurred...
+            console.log("ERROR", err, "ERROR");
+            req.flash('error_msg', 'Something happened! Please try again.');
+            res.redirect('/login');
+        }
+        else{
+            res.render('dashboard', {title: 'Dashboard', home: true, session: req.session, user});
+        }
+    });
 };

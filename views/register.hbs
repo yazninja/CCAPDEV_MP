@@ -1,9 +1,10 @@
 <script src="../js/script.js"></script>
 <script src="../js/validate.js"></script>
 <div class="center-div">
-    <div class="form_container">
+    <div class="form_container" style="max-width: 55rem">
         <form action="/register" method="post">
             <h1>CREATE YOUR PESOTRACK ACCOUNT</h1>
+            {{> messages }}
             <div class="form_group">
                 <input type="text" name="username" required>
                 <label for="username" class="control_label">Username</label>
@@ -38,5 +39,6 @@
                 <button type="submit" class="submit"><span>Register</span></button>
             </div>
         </form>
+        <p>Already registered? <a href="/login">Login</a>.</p>
     </div>
 </div>
