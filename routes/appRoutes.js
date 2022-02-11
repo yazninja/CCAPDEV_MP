@@ -9,6 +9,12 @@ const e = require('connect-flash');
 // Pages using main layout
 router.get("/dashboard", isPrivate, UserController.findUser);
 // router.get("/account", isPrivate, UserController.findUser);
+// trying to render account
+router.get("/account", isPrivate, function (req, res) {
+    console.log("#Account");
+    res.render("setaccount", { title: 'Account', account: true, session: req.session });
+});
+
 router.get("/calendar", isPrivate, function (req, res) {
     console.log("#Calendar");
     res.render("calendar-page", { title: 'Calendar', cal: true, session: req.session });

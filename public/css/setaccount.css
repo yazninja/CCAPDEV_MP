@@ -6,7 +6,7 @@ body{
 .container {
     background: white;
     width: 400px;
-    height: 1000px;
+    height: 800px;
     margin: 0 auto;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -68,10 +68,10 @@ h2 {
 
 
 .profile-pic-div{
-    height: 200px;
-    width: 200px;
+    height: 150px;
+    width: 150px;
     position: absolute;
-    top: 22%;
+    top: 21%;
     left: 50%;
     transform: translate(-50%,-50%);
     border-radius: 50%;
