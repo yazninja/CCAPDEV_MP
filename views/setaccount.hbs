@@ -1,39 +1,40 @@
-<setaccount>
-<head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/setaccount.css">  
-</head>
-<body>
-<div class="container">
-    <div class="profile">
-        <h1>Profle Information</h1>
-        <h2>Profile Picture</h2>
-        <br>
-        <div class="profile-pic-div">
-            <img src="../img/user.png" id="photo">
-            <input type="file" id="file">
-            <label for="file" id="uploadBtn">Choose Photo</label>
-        </div>
-        <br><br><br><br><br><br><br><br>
+{{!--
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> --}}
+<link rel="stylesheet" href="../css/setaccount.css">
 
-        <h1>Personal Information</h1>
-        <div id="fade1">
-            <h2>Username</h2>
-            <input type="text" class="input" id="acfullname" value="dummy">
-            <h2>Firstname</h2>
-            <input type="text" class="input" id="acbirthday" value="dummy">
-            <h2>LastName</h2>
-            <input type="text" class="input" id="acemail" value="dummy">
-            <h2>Password</h2>
-            <input type="password" class="input" id="acpassword" value="dummy">
-            <h2>Monthly Income</h2>
-            <input type="text" class="input" id="acpassword" value="dummy">
+
+<div class="container">
+    <div class="acc-container">
+        <div class="profile">
+            <h1>Profle Information</h1>
+            <h2>Profile Picture</h2>
+            <br>
+            <div class="profile-pic-div">
+                <img src="../img/user.png" id="photo">
+                <input type="file" id="file">
+                <label for="file" id="uploadBtn">Choose Photo</label>
+            </div>
+
+            <div class="personal-info">
+                <h1>Personal Information</h1>
+                <div id="fade1">
+                    <h2>Username</h2>
+                    <input type="text" class="input" id="acfullname" value="dummy">
+                    <h2>Firstname</h2>
+                    <input type="text" class="input" id="acbirthday" value="dummy">
+                    <h2>LastName</h2>
+                    <input type="text" class="input" id="acemail" value="dummy">
+                    <h2>Password</h2>
+                    <input type="password" class="input" id="acpassword" value="dummy">
+                    <h2>Monthly Income</h2>
+                    <input type="text" class="input" id="acpassword" value="dummy">
+                </div>
+                <br>
+                <input type="button" value="Show/Hide Name" onclick="toggle()" />
+            </div>
         </div>
-        <br>
-        <input type="button" value="Show/Hide Name" onclick="toggle()"/>
     </div>
 </div>
-    <script src="../js/showhide.js"></script>
-    <script src="../js/profileupload.js"></script>
-</body>
-</setaccount>
+<script src="../js/showhide.js"></script>
+<script src="../js/profileupload.js"></script>

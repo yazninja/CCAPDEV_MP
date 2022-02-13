@@ -8,6 +8,11 @@ $(document).ready(function(){
         location.assign("/dashboard");
         console.log("dashboard");
     });
+    $('.account').click(function(){
+        location.assign("/account");
+        console.log("account");
+    });
+    
     $('.add').click(function(){
         location.assign("/add");
         console.log("add");
