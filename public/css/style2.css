@@ -519,10 +519,21 @@ html {
     width:100%;
   }
   .transaction_container h1{
+    display: block;
     color:#000;
     text-align: center;
     font-weight: bold;
   }
+  .transaction_container .empty{
+    display: flex;
+    justify-content: center;
+    width:100%;
+    color:#000;
+    text-align: center;
+    padding-top: 2rem;
+    font-size: 12px;
+  }
+
   .transaction-card{
     display: flex;
     height: 8rem;

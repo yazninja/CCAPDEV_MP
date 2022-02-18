@@ -33,5 +33,6 @@ router.get("/edit", isPrivate, TransactionController.getAllTransactions);
 router.post("/add-income", isPrivate, isIncome, TransactionController.addTransaction);
 router.post("/add-expense", isPrivate, isExpense, TransactionController.addTransaction);
 router.post("/update-user", isPrivate, UserController.updateUser);
+router.post("/remove-transaction", isPrivate, TransactionController.deleteTransaction);
 
 module.exports = router;

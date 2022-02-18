@@ -23,6 +23,21 @@
         date = new Date( $('.date').text())
         console.log(date);
         $('.date').text(months[date.getMonth()] + " " + date.getDate() + ", " + date.getFullYear());
+
+        $('.delete_transaction').click(function () {
+            console.log("Delete");
+            $.ajax({
+                url: '/delete-transaction',
+                type: 'POST',
+                data: {
+                    id: $(this).parent().parent().attr('id')
+                },
+                success: function (data) {
+                    console.log(data);
+                    location.reload();
+                }
+            });
+        });
         
     });
 </script>

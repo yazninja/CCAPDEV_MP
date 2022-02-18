@@ -29,13 +29,27 @@ exports.addTransaction = function (req, res) {
 };
 // Get all tranasctions from a user
 exports.getAllTransactions = function (req, res) {
-    TransactionModel.getAllFromUser(req.session.username, (err, transactions) => {
+    TransactionModel.getAllFromUser(req.session.user, (err, transactions) => {
         if(err)
         {
             console.log(err);
         }
         else{
             res.render("remove", { title: 'Edit Transactions', remove: true, transactions: transactions, session: req.session });
+        }
+    });
+};
+// Delete transaction by id
+exports.deleteTransaction = function (req, res) {
+    TransactionModel.deleteById(req.params.id, (err, transaction) => {
+        if (err) {
+            console.log(err);
+            req,flash('error_msg', 'Could not delete transaction. Please try again.', err);
+            res.redirect("/remove");
+        }
+        else {
+            req.flash('success_msg', 'Transaction deleted successfully');
+            res.redirect("/remove");
         }
     });
 };

@@ -29,8 +29,8 @@ exports.create = function (obj, next) {
 };
 
 // Find all transactions by username
-exports.getAllFromUser = function (username, next) {
-    TransactionModel.find({ username: username }, function (err, transactions) {
+exports.getAllFromUser = function (userId, next) {
+    TransactionModel.find({ userId: userId }, function (err, transactions) {
         next(err, transactions);
     });
 };
