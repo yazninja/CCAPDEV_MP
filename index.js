@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const Handlebars = require('handlebars');
 const { engine } = require("express-handlebars");
+const bodyParser = require("body-parser");
 const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-access')
 // Routers
 const appRouter = require('./routes/appRoutes');
@@ -11,8 +12,8 @@ const session = require('express-session');
 const flash = require('connect-flash');
 const MongoStore = require('connect-mongo');
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname = "./public"));
 // Session  
 app.use(session({

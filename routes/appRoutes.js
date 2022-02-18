@@ -20,19 +20,17 @@ router.get("/add", isPrivate, function (req, res) {
     console.log("#Add");
     res.render("add", { title: 'Add Transaction', add: true, session: req.session });
 });
-router.get("/remove", isPrivate, function (req, res) {
+router.get("/edit", isPrivate, function (req, res) {
     console.log("#Remove");
-    Transaction.find({ username: user.username }).exec(function (err, transactions) {
-        console.log(transactions);
-        res.render("remove", { title: 'Remove Transaction', remove: true, });
-    });
+        res.render("remove", { title: 'Remove Transaction', remove: true, session: req.session});
 });
-router.get("/edit", isPrivate, TransactionController.getAllTransactions);
+// router.get("/edit", isPrivate, TransactionController.getAllTransactions);
 // router.get("/settings", isPrivate);
 
 router.post("/add-income", isPrivate, isIncome, TransactionController.addTransaction);
 router.post("/add-expense", isPrivate, isExpense, TransactionController.addTransaction);
 router.post("/update-user", isPrivate, UserController.updateUser);
-router.post("/remove-transaction", isPrivate, TransactionController.deleteTransaction);
+router.post("/delete-transaction", isPrivate, TransactionController.deleteTransaction);
+router.get("/get-transactions", isPrivate, TransactionController.getAllTransactions);
 
 module.exports = router;

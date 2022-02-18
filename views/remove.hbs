@@ -1,19 +1,6 @@
 <div class="container">
     <div class="transaction_container">
         <h1>TRANSACTIONS LIST</h1>
-        
-
-        {{#if transactions}}
-            {{#each transactions}}
-            {{> transaction}}
-            {{/each}}
-        {{else}}
-        <div class="empty">
-            <span> Uh oh! It looks like you do not have any transactions. <a href="/add">Add one now</a>!</span>
-        </div>
-        {{/if}}
     </div>
-    
-
-
 </div>
+<script src="../js/transactions.js"></script> 

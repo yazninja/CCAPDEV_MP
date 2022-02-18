@@ -35,13 +35,16 @@ exports.getAllTransactions = function (req, res) {
             console.log(err);
         }
         else{
-            res.render("remove", { title: 'Edit Transactions', remove: true, transactions: transactions, session: req.session });
+            res.status(200).send(transactions);
+            
         }
     });
 };
 // Delete transaction by id
 exports.deleteTransaction = function (req, res) {
-    TransactionModel.deleteById(req.params.id, (err, transaction) => {
+    // console.log("#Delete");
+    // console.log(req.id);
+    TransactionModel.deleteById(req.session.trId, (err, transaction) => {
         if (err) {
             console.log(err);
             req,flash('error_msg', 'Could not delete transaction. Please try again.', err);
