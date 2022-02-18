@@ -115,3 +115,39 @@ exports.findUser = function (req,res) {
         }
     });
 };
+exports.findUserInfo = function (req,res) {
+    console.log(req.session.user);
+    const { user } = req.session;
+    UserModel.getById(user, function (err, user){
+        if (err) {
+            // Database error occurred...
+            console.log("ERROR", err, "ERROR");
+            req.flash('error_msg', 'Something happened! Please try again.');
+            res.redirect('/login');
+        }
+        else{
+            res.render("setaccount", { title: 'Account', account: true, session: req.session, user});
+        }
+    });
+};
+exports.updateUser = function (req,res) {
+    const { user } = req.session;
+    const { username, firstName, lastName, currMonthlyIncome } = req.body;
+    UserModel.update(user, { username, firstName, lastName, currMonthlyIncome }, function (err, user){
+        if (err) {
+            // Database error occurred...
+            console.log("ERROR", err, "ERROR");
+            req.flash('error_msg', 'Something happened! Please try again.');
+            res.redirect('/login');
+        }
+        else{
+            req.flash('success_msg', 'User information updated!');
+            req.session.user = user._id;
+            req.session.username = user.username;
+            req.session.firstName = user.firstName;
+            req.session.lastName = user.lastName;
+            console.log(user);
+            res.redirect('/account');
+        }
+    });
+}

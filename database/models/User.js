@@ -36,3 +36,8 @@ exports.getOne = function(query, next) {
         next(err, user);
     });
 };
+exports.update = function(id, obj, next) {
+    UserModel.findByIdAndUpdate(id, obj, function(err, user) {
+        next(err, user);
+    });
+}

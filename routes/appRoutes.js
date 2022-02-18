@@ -10,10 +10,7 @@ const e = require('connect-flash');
 router.get("/dashboard", isPrivate, UserController.findUser);
 // router.get("/account", isPrivate, UserController.findUser);
 // trying to render account
-router.get("/account", isPrivate, function (req, res) {
-    console.log("#Account");
-    res.render("setaccount", { title: 'Account', account: true, session: req.session });
-});
+router.get("/account", isPrivate, UserController.findUserInfo);
 
 router.get("/calendar", isPrivate, function (req, res) {
     console.log("#Calendar");
@@ -35,5 +32,6 @@ router.get("/edit", isPrivate, TransactionController.getAllTransactions);
 
 router.post("/add-income", isPrivate, isIncome, TransactionController.addTransaction);
 router.post("/add-expense", isPrivate, isExpense, TransactionController.addTransaction);
+router.post("/update-user", isPrivate, UserController.updateUser);
 
 module.exports = router;

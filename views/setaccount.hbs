@@ -6,6 +6,7 @@
 
 <div class="container">
     <div class="acc-container">
+        {{> messages}}
         <div class="profile">
             <h1>Profle Information</h1>
             <h2>Profile Picture</h2>
@@ -15,26 +16,25 @@
                 <input type="file" id="file">
                 <label for="file" id="uploadBtn">Choose Photo</label>
             </div>
-
-            <div class="personal-info">
-                <h1>Personal Information</h1>
-                <div id="fade1">
-                    <h2>Username</h2>
-                    <input type="text" class="input" id="acfullname" value="dummy">
-                    <h2>Firstname</h2>
-                    <input type="text" class="input" id="acbirthday" value="dummy">
-                    <h2>LastName</h2>
-                    <input type="text" class="input" id="acemail" value="dummy">
-                    <h2>Password</h2>
-                    <input type="password" class="input" id="acpassword" value="dummy">
-                    <h2>Monthly Income</h2>
-                    <input type="text" class="input" id="acpassword" value="dummy">
-                </div>
-                <br>
-                <input type="button" value="Show/Hide Name" onclick="toggle()" />
-            </div>
+            <form action="/update-user" method="post" class="add_income">
+                <div class="personal-info">
+                    <h1>Personal Information</h1>
+                    <div id="fade1">
+                        <h2>Username</h2>
+                        <input type="text" class="input" name="username" value="{{user.username}}">
+                        <h2>Firstname</h2>
+                        <input type="text" class="input" name="firstName" value="{{user.firstName}}">
+                        <h2>LastName</h2>
+                        <input type="text" class="input" name="lastName" value="{{user.lastName}}">
+                        <h2>Monthly Income</h2>
+                        <input type="text" class="input" name="currMonthIncome" value="{{user.currMonthIncome}}">
+                    </div>
+                    <input type="submit" class="btn btn-primary" id="save" value="Save">
+            </form>
+            <input type="button" value="Show/Hide Name" onclick="toggle()" />
         </div>
     </div>
+</div>
 </div>
 <script src="../js/showhide.js"></script>
 <script src="../js/profileupload.js"></script>
