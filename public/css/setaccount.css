@@ -19,37 +19,40 @@
     position: relative;
     box-shadow: 2px 5px 20px rgba(119,119,119,.5);
     padding: 10px;
-    
 }
 
-.profile {
+/* .acc-container btn btn-primary {
+
+} */
+
+/* .profile {
     margin-left: 70px;
-}
-.personal-info{
+} */
+.personal-info {
     /* margin-left: 70px; */
     margin-top: 200px;
 }
 
-.personal-info h1, .profile h1 {
-    font-family: "Montserrat", sans-serif;
-    font-family: 'Poppins', sans-serif;
-    color: #04AA6D;
-    font-size: 1.2rem;
-    margin-top: 20px;
-    margin-bottom: 35px;
-    margin-left: 55px;
-}
+    .personal-info h1, .profile h1 {
+        font-family: "Montserrat", sans-serif;
+        font-family: 'Poppins', sans-serif;
+        color: #04AA6D;
+        font-size: 1.2rem;
+        margin-top: 20px;
+        margin-bottom: 35px;
+        margin-left: 55px;
+    }
 
-.personal-info h2, .profile h2 {
-    color: black;
-    /* font-family: "Roboto", sans-serif; */
-    font-family: 'Poppins', sans-serif;
-    text-transform: uppercase;
-    font-size: 8px;
-    letter-spacing: 1px;
-    margin-left: 2px;
-    margin-top: 10px;
-}
+    .personal-info h2, .profile h2 {
+        color: black;
+        /* font-family: "Roboto", sans-serif; */
+        font-family: 'Poppins', sans-serif;
+        text-transform: uppercase;
+        font-size: 8px;
+        letter-spacing: 1px;
+        margin-left: 55px;
+        margin-top: 10px;
+    }
 
 .input {
     border: 0;
@@ -57,35 +60,50 @@
     width: 80%;
     /* font-family: "montserrat", sans-serif; */
     font-family: 'Poppins', sans-serif;
-    font-size: .7em;
-    padding: 7px 0;
+    font-size: 14px;
+    padding: 7px 0px;
     color: black;
     outline: none;
     text-align: center;
+    margin-left: 50px;
 }
 
-.hide { visibility : hidden; opacity: 0 }
+#save, #show {
+    width: 80%;
+    margin-left: 50px;
+}
 
-#fade1 { transition: all 0s; }
-#fade1.hide {
+.hide {
     visibility: hidden;
-    opacity: 0;
-    height: 0;
+    opacity: 0
 }
 
-#fade2 { transition: all 0s; }
-#fade2.hide {
-    visibility: hidden;
-    opacity: 0;
-    height: 0;
+#fade1 {
+    transition: all 0s;
 }
 
+    #fade1.hide {
+        visibility: hidden;
+        opacity: 0;
+        height: 0;
+    }
 
-.profile-pic-div{
+#fade2 {
+    transition: all 0s;
+}
+
+    #fade2.hide {
+        visibility: hidden;
+        opacity: 0;
+        height: 0;
+    }
+
+
+.profile-pic-div {
     height: 150px;
     width: 150px;
     position: absolute;
-    top: 21%;
+    top: 24%;
     left: 50%;
     transform: translate(-50%,-50%);
     border-radius: 50%;
@@ -93,16 +111,16 @@
     border: 1px solid grey;
 }
 
-#photo{
+#photo {
     height: 100%;
     width: 100%;
 }
 
-#file{
+#file {
     display: none;
 }
 
-#uploadBtn{
+#uploadBtn {
     height: 40px;
     width: 100%;
     position: absolute;

@@ -1,6 +1,4 @@
-{{!--
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> --}}
+{{!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> --}}
 <link rel="stylesheet" href="../css/setaccount.css">
 
 
@@ -27,11 +25,16 @@
                         <h2>LastName</h2>
                         <input type="text" class="input" name="lastName" value="{{user.lastName}}">
                         <h2>Monthly Income</h2>
-                        <input type="text" class="input" name="currMonthIncome" value="{{user.currMonthIncome}}">
+                        <input type="text" class="input" name="currMonthlyIncome" value="{{user.currMonthlyIncome}}">
+                        <br><br><br>
                     </div>
+
                     <input type="submit" class="btn btn-primary" id="save" value="Save">
+                    <br><br><br>
             </form>
-            <input type="button" value="Show/Hide Name" onclick="toggle()" />
+
+            <input type="button" value="Show/Hide Name" id="show" onclick="toggle()" />
+
         </div>
     </div>
 </div>
