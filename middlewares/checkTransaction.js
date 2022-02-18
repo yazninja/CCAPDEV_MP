@@ -2,7 +2,7 @@ const res = require("express/lib/response");
 
 exports.isIncome = (req, res, next) => {
     req.body.type = "income";
-    req.body.username = req.session.username;
+    req.body.userId = req.session.user;
     req.body.amount = parseFloat(req.body.amount.substr(4).replace(/,/g, '')).toFixed(2);
     delete req.body.iPresets;
     if (req.body.custom_category) {
@@ -36,7 +36,7 @@ exports.isIncome = (req, res, next) => {
 };
 exports.isExpense = (req, res, next) => {
     req.body.type = "expense";
-    req.body.username = req.session.username;
+    req.body.userId = req.session.user;
     req.body.amount = parseFloat(req.body.amount.substr(4).replace(/,/g, '')).toFixed(2);
     delete req.body.ePresets;
     if (req.body.custom_category) {

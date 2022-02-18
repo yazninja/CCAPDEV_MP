@@ -7,7 +7,7 @@ mongoose.connect(dbURL, options, function () {
 const TransactionSchema = new mongoose.Schema({
 
     title: String, // Title of the transaction
-    username: String, // username of the user who made the transaction
+    userId: String, // user ID of the user who made the transaction
     type: String, // income or expense
     amount: Number, // amount of the transaction
     date: Date, // date of the transaction
